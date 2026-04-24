@@ -1601,6 +1601,716 @@
 //   SUBJECT_DELETION_REQUESTS: 'acadplan_subject_deletion_requests'
 // };
 
+// // src/data/mockData.js
+
+// // Mock Users with passwordChanged flag
+// export const MOCK_USERS = [
+//   { id: 1, email: "dean@university.edu", password: "dean123", role: "admin", name: "Dr. Aravind Sharma", avatar: "AS", school: "Central Administration", passwordChanged: true },
+//   { id: 2, email: "coordinator@university.edu", password: "coord123", role: "coordinator", name: "Prof. Meera Nair", avatar: "MN", school: "Timetable Office", passwordChanged: true },
+//   // BTech Faculty (8 faculty)
+//   { id: 3, email: "rahul@university.edu", password: "faculty123", role: "faculty", name: "Dr. Rahul Krishnan", avatar: "RK", school: "SoCSE", designation: "Professor", course: "BTech", passwordChanged: true },
+//   { id: 4, email: "priya@university.edu", password: "faculty123", role: "faculty", name: "Dr. Priya Iyer", avatar: "PI", school: "SoCSE", designation: "Professor", course: "BTech", passwordChanged: true },
+//   { id: 5, email: "amit@university.edu", password: "faculty123", role: "faculty", name: "Dr. Amit Sharma", avatar: "AS", school: "SoCSE", designation: "Associate Professor", course: "BTech", passwordChanged: true },
+//   { id: 6, email: "neha@university.edu", password: "faculty123", role: "faculty", name: "Dr. Neha Gupta", avatar: "NG", school: "SoCSE", designation: "Associate Professor", course: "BTech", passwordChanged: true },
+//   { id: 7, email: "vikram@university.edu", password: "faculty123", role: "faculty", name: "Dr. Vikram Singh", avatar: "VS", school: "SoCSE", designation: "Assistant Professor", course: "BTech", passwordChanged: true },
+//   { id: 8, email: "anita@university.edu", password: "faculty123", role: "faculty", name: "Dr. Anita Roy", avatar: "AR", school: "SoCSE", designation: "Assistant Professor", course: "BTech", passwordChanged: true },
+//   { id: 9, email: "sanjay@university.edu", password: "faculty123", role: "faculty", name: "Dr. Sanjay Mehta", avatar: "SM", school: "SoCSE", designation: "Assistant Professor", course: "BTech", passwordChanged: true },
+//   { id: 10, email: "pooja@university.edu", password: "faculty123", role: "faculty", name: "Dr. Pooja Reddy", avatar: "PR", school: "SoCSE", designation: "Assistant Professor", course: "BTech", passwordChanged: true },
+//   // BSc Faculty (6 faculty)
+//   { id: 11, email: "suresh@university.edu", password: "faculty123", role: "faculty", name: "Prof. Suresh Kumar", avatar: "SK", school: "SoCSE", designation: "Professor", course: "BSc", passwordChanged: true },
+//   { id: 12, email: "deepa@university.edu", password: "faculty123", role: "faculty", name: "Prof. Deepa Nair", avatar: "DN", school: "SoCSE", designation: "Professor", course: "BSc", passwordChanged: true },
+//   { id: 13, email: "rajesh@university.edu", password: "faculty123", role: "faculty", name: "Dr. Rajesh Kumar", avatar: "RK", school: "SoCSE", designation: "Associate Professor", course: "BSc", passwordChanged: true },
+//   { id: 14, email: "kavita@university.edu", password: "faculty123", role: "faculty", name: "Dr. Kavita Joshi", avatar: "KJ", school: "SoCSE", designation: "Assistant Professor", course: "BSc", passwordChanged: true },
+//   { id: 15, email: "manoj@university.edu", password: "faculty123", role: "faculty", name: "Dr. Manoj Tiwari", avatar: "MT", school: "SoCSE", designation: "Assistant Professor", course: "BSc", passwordChanged: true },
+//   { id: 16, email: "swati@university.edu", password: "faculty123", role: "faculty", name: "Dr. Swati Desai", avatar: "SD", school: "SoCSE", designation: "Assistant Professor", course: "BSc", passwordChanged: true },
+//   // BCA Faculty (6 faculty)
+//   { id: 17, email: "alok@university.edu", password: "faculty123", role: "faculty", name: "Dr. Alok Mishra", avatar: "AM", school: "SoCSE", designation: "Professor", course: "BCA", passwordChanged: true },
+//   { id: 18, email: "rekha@university.edu", password: "faculty123", role: "faculty", name: "Dr. Rekha Verma", avatar: "RV", school: "SoCSE", designation: "Associate Professor", course: "BCA", passwordChanged: true },
+//   { id: 19, email: "naveen@university.edu", password: "faculty123", role: "faculty", name: "Dr. Naveen Bhatia", avatar: "NB", school: "SoCSE", designation: "Assistant Professor", course: "BCA", passwordChanged: true },
+//   { id: 20, email: "monica@university.edu", password: "faculty123", role: "faculty", name: "Dr. Monica Sethi", avatar: "MS", school: "SoCSE", designation: "Assistant Professor", course: "BCA", passwordChanged: true },
+//   { id: 21, email: "tarun@university.edu", password: "faculty123", role: "faculty", name: "Dr. Tarun Kapoor", avatar: "TK", school: "SoCSE", designation: "Assistant Professor", course: "BCA", passwordChanged: true },
+//   { id: 22, email: "divya@university.edu", password: "faculty123", role: "faculty", name: "Dr. Divya Malhotra", avatar: "DM", school: "SoCSE", designation: "Assistant Professor", course: "BCA", passwordChanged: true },
+//   // Students
+//   { id: 23, email: "student.btech@university.edu", password: "student123", role: "student", name: "Rohan Mehta", avatar: "RM", course: "BTech", semester: 1, section: "A", passwordChanged: true },
+//   { id: 24, email: "student.bsc@university.edu", password: "student123", role: "student", name: "Priya Sharma", avatar: "PS", course: "BSc", semester: 1, section: "B", passwordChanged: true },
+//   { id: 25, email: "student.bca@university.edu", password: "student123", role: "student", name: "Arjun Kumar", avatar: "AK", course: "BCA", semester: 2, section: "C", passwordChanged: true },
+//   // Director
+//   { id: 26, email: "director@university.edu", password: "director123", role: "director", name: "Prof. Rajesh Menon", avatar: "RM", school: "School of CSE", passwordChanged: true },
+//   // EA
+//   { id: 27, email: "ea@university.edu", password: "ea123", role: "ea", name: "Sarah Johnson", avatar: "SJ", school: "Dean's Office", passwordChanged: true },
+//   // Visiting Faculty
+//   { id: 28, email: "visiting@university.edu", password: "visiting123", role: "visiting_faculty", name: "Dr. James Wilson", avatar: "JW", school: "SoCSE", designation: "Visiting Professor", course: "BTech", passwordChanged: true },
+// ];
+
+// // Courses, Semesters, Sections
+// export const COURSES = ["BTech", "BSc", "BCA"];
+// export const SEMESTERS = [1, 2];
+// export const SECTIONS = ["A", "B", "C"];
+
+// // Exam Types and Subject Types
+// export const EXAM_TYPES = ["SEE", "Practical", "Seminar"];
+// export const SUBJECT_TYPES = ["Core", "Major", "Minor"];
+
+// // Workload Limits based on designation
+// export const WORKLOAD_LIMITS = {
+//   "Assistant Professor": 14,
+//   "Associate Professor": 12,
+//   "Professor": 10,
+// };
+
+// // Default Faculty Data with Location Fields
+// export const DEFAULT_FACULTY = [
+//   // BTech Faculty (8 faculty - 94 hours total)
+//   { id: 3, facultyId: "FAC001", name: "Dr. Rahul Krishnan", avatar: "RK", dept: "CSE", designation: "Professor", specialization: "Data Structures, Algorithms", course: "BTech", maxHours: 10, assignedHours: 0, remainingHours: 10, preferences: [], color: "#4361ee", email: "rahul@university.edu", block: "Academic Block A", floor: "3rd Floor", roomNumber: "301", cabinLocation: "A-301" },
+//   { id: 4, facultyId: "FAC002", name: "Dr. Priya Iyer", avatar: "PI", dept: "CSE", designation: "Professor", specialization: "Machine Learning, AI", course: "BTech", maxHours: 10, assignedHours: 0, remainingHours: 10, preferences: [], color: "#9d4edd", email: "priya@university.edu", block: "Academic Block A", floor: "3rd Floor", roomNumber: "302", cabinLocation: "A-302" },
+//   { id: 5, facultyId: "FAC003", name: "Dr. Amit Sharma", avatar: "AS", dept: "CSE", designation: "Associate Professor", specialization: "DBMS, OS", course: "BTech", maxHours: 12, assignedHours: 0, remainingHours: 12, preferences: [], color: "#06d6a0", email: "amit@university.edu", block: "Academic Block A", floor: "2nd Floor", roomNumber: "201", cabinLocation: "A-201" },
+//   { id: 6, facultyId: "FAC004", name: "Dr. Neha Gupta", avatar: "NG", dept: "CSE", designation: "Associate Professor", specialization: "Computer Networks, Security", course: "BTech", maxHours: 12, assignedHours: 0, remainingHours: 12, preferences: [], color: "#ffb703", email: "neha@university.edu", block: "Academic Block A", floor: "2nd Floor", roomNumber: "202", cabinLocation: "A-202" },
+//   { id: 7, facultyId: "FAC005", name: "Dr. Vikram Singh", avatar: "VS", dept: "CSE", designation: "Assistant Professor", specialization: "Web Development, React", course: "BTech", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#e3646b", email: "vikram@university.edu", block: "Academic Block B", floor: "1st Floor", roomNumber: "101", cabinLocation: "B-101" },
+//   { id: 8, facultyId: "FAC006", name: "Dr. Anita Roy", avatar: "AR", dept: "CSE", designation: "Assistant Professor", specialization: "Python, Data Science", course: "BTech", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#6b705c", email: "anita@university.edu", block: "Academic Block B", floor: "1st Floor", roomNumber: "102", cabinLocation: "B-102" },
+//   { id: 9, facultyId: "FAC007", name: "Dr. Sanjay Mehta", avatar: "SM", dept: "CSE", designation: "Assistant Professor", specialization: "Cloud Computing, DevOps", course: "BTech", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#118ab2", email: "sanjay@university.edu", block: "Academic Block B", floor: "2nd Floor", roomNumber: "201", cabinLocation: "B-201" },
+//   { id: 10, facultyId: "FAC008", name: "Dr. Pooja Reddy", avatar: "PR", dept: "CSE", designation: "Assistant Professor", specialization: "Software Engineering, Testing", course: "BTech", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#ef476f", email: "pooja@university.edu", block: "Academic Block B", floor: "2nd Floor", roomNumber: "202", cabinLocation: "B-202" },
+  
+//   // BSc Faculty (6 faculty - 74 hours total)
+//   { id: 11, facultyId: "FAC009", name: "Prof. Suresh Kumar", avatar: "SK", dept: "CSE", designation: "Professor", specialization: "Mathematics, Discrete Structures", course: "BSc", maxHours: 10, assignedHours: 0, remainingHours: 10, preferences: [], color: "#ffb703", email: "suresh@university.edu", block: "Science Block", floor: "2nd Floor", roomNumber: "201", cabinLocation: "S-201" },
+//   { id: 12, facultyId: "FAC010", name: "Prof. Deepa Nair", avatar: "DN", dept: "CSE", designation: "Professor", specialization: "Programming Fundamentals, C", course: "BSc", maxHours: 10, assignedHours: 0, remainingHours: 10, preferences: [], color: "#6b705c", email: "deepa@university.edu", block: "Science Block", floor: "2nd Floor", roomNumber: "202", cabinLocation: "S-202" },
+//   { id: 13, facultyId: "FAC011", name: "Dr. Rajesh Kumar", avatar: "RK", dept: "CSE", designation: "Associate Professor", specialization: "Database Systems, SQL", course: "BSc", maxHours: 12, assignedHours: 0, remainingHours: 12, preferences: [], color: "#9d4edd", email: "rajesh@university.edu", block: "Science Block", floor: "1st Floor", roomNumber: "101", cabinLocation: "S-101" },
+//   { id: 14, facultyId: "FAC012", name: "Dr. Kavita Joshi", avatar: "KJ", dept: "CSE", designation: "Assistant Professor", specialization: "Web Technologies, HTML/CSS", course: "BSc", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#06d6a0", email: "kavita@university.edu", block: "Science Block", floor: "1st Floor", roomNumber: "102", cabinLocation: "S-102" },
+//   { id: 15, facultyId: "FAC013", name: "Dr. Manoj Tiwari", avatar: "MT", dept: "CSE", designation: "Assistant Professor", specialization: "Data Analysis, Python", course: "BSc", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#e3646b", email: "manoj@university.edu", block: "Science Block", floor: "Ground Floor", roomNumber: "001", cabinLocation: "S-001" },
+//   { id: 16, facultyId: "FAC014", name: "Dr. Swati Desai", avatar: "SD", dept: "CSE", designation: "Assistant Professor", specialization: "Computer Graphics, Multimedia", course: "BSc", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#118ab2", email: "swati@university.edu", block: "Science Block", floor: "Ground Floor", roomNumber: "002", cabinLocation: "S-002" },
+  
+//   // BCA Faculty (6 faculty - 74 hours total)
+//   { id: 17, facultyId: "FAC015", name: "Dr. Alok Mishra", avatar: "AM", dept: "CSE", designation: "Professor", specialization: "Object Oriented Programming, C++", course: "BCA", maxHours: 10, assignedHours: 0, remainingHours: 10, preferences: [], color: "#4361ee", email: "alok@university.edu", block: "Academic Block C", floor: "2nd Floor", roomNumber: "201", cabinLocation: "C-201" },
+//   { id: 18, facultyId: "FAC016", name: "Dr. Rekha Verma", avatar: "RV", dept: "CSE", designation: "Associate Professor", specialization: "Data Structures, Algorithms", course: "BCA", maxHours: 12, assignedHours: 0, remainingHours: 12, preferences: [], color: "#ffb703", email: "rekha@university.edu", block: "Academic Block C", floor: "2nd Floor", roomNumber: "202", cabinLocation: "C-202" },
+//   { id: 19, facultyId: "FAC017", name: "Dr. Naveen Bhatia", avatar: "NB", dept: "CSE", designation: "Assistant Professor", specialization: "Software Engineering, Testing", course: "BCA", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#9d4edd", email: "naveen@university.edu", block: "Academic Block C", floor: "1st Floor", roomNumber: "101", cabinLocation: "C-101" },
+//   { id: 20, facultyId: "FAC018", name: "Dr. Monica Sethi", avatar: "MS", dept: "CSE", designation: "Assistant Professor", specialization: "Database Management, SQL", course: "BCA", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#06d6a0", email: "monica@university.edu", block: "Academic Block C", floor: "1st Floor", roomNumber: "102", cabinLocation: "C-102" },
+//   { id: 21, facultyId: "FAC019", name: "Dr. Tarun Kapoor", avatar: "TK", dept: "CSE", designation: "Assistant Professor", specialization: "Internet Technologies, Web Dev", course: "BCA", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#e3646b", email: "tarun@university.edu", block: "Academic Block C", floor: "Ground Floor", roomNumber: "001", cabinLocation: "C-001" },
+//   { id: 22, facultyId: "FAC020", name: "Dr. Divya Malhotra", avatar: "DM", dept: "CSE", designation: "Assistant Professor", specialization: "Multimedia Systems, Graphics", course: "BCA", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#118ab2", email: "divya@university.edu", block: "Academic Block C", floor: "Ground Floor", roomNumber: "002", cabinLocation: "C-002" },
+// ];
+
+// // Default Subjects - Balanced for each course
+// export const DEFAULT_SUBJECTS = [
+//   // ========== BTECH (16 subjects - 8 per semester) ==========
+//   // Semester 1 - Core (4), Major (2), Minor (2)
+//   { id: "BT101", code: "BT101", name: "Data Structures", dept: "CSE", course: "BTech", semester: 1, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 3, labPeriodsPerWeek: 2, totalWeeklyClasses: 5, approvalStatus: "approved", examType: "SEE", subjectType: "Core" },
+//   { id: "BT102", code: "BT102", name: "Algorithms", dept: "CSE", course: "BTech", semester: 1, credits: 4, modules: 5, type: "Theory", theoryClassesPerWeek: 4, labPeriodsPerWeek: 0, totalWeeklyClasses: 4, approvalStatus: "approved", examType: "SEE", subjectType: "Core" },
+//   { id: "BT103", code: "BT103", name: "Database Management Systems", dept: "CSE", course: "BTech", semester: 1, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 2, totalWeeklyClasses: 4, approvalStatus: "approved", examType: "SEE", subjectType: "Core" },
+//   { id: "BT104", code: "BT104", name: "Object Oriented Programming", dept: "CSE", course: "BTech", semester: 1, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 3, labPeriodsPerWeek: 2, totalWeeklyClasses: 5, approvalStatus: "approved", examType: "Practical", subjectType: "Core" },
+//   { id: "BT105", code: "BT105", name: "Advanced Data Structures", dept: "CSE", course: "BTech", semester: 1, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 3, labPeriodsPerWeek: 2, totalWeeklyClasses: 5, approvalStatus: "approved", examType: "SEE", subjectType: "Major" },
+//   { id: "BT106", code: "BT106", name: "Machine Learning Basics", dept: "CSE", course: "BTech", semester: 1, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 3, labPeriodsPerWeek: 2, totalWeeklyClasses: 5, approvalStatus: "approved", examType: "Practical", subjectType: "Major" },
+//   { id: "BT107", code: "BT107", name: "Discrete Mathematics", dept: "CSE", course: "BTech", semester: 1, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
+//   { id: "BT108", code: "BT108", name: "Digital Logic Design", dept: "CSE", course: "BTech", semester: 1, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
+  
+//   // Semester 2 - Core (4), Major (2), Minor (2)
+//   { id: "BT201", code: "BT201", name: "Operating Systems", dept: "CSE", course: "BTech", semester: 2, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 2, totalWeeklyClasses: 4, approvalStatus: "approved", examType: "SEE", subjectType: "Core" },
+//   { id: "BT202", code: "BT202", name: "Computer Networks", dept: "CSE", course: "BTech", semester: 2, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 2, totalWeeklyClasses: 4, approvalStatus: "approved", examType: "SEE", subjectType: "Core" },
+//   { id: "BT203", code: "BT203", name: "Software Engineering", dept: "CSE", course: "BTech", semester: 2, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "Seminar", subjectType: "Core" },
+//   { id: "BT204", code: "BT204", name: "Web Development", dept: "CSE", course: "BTech", semester: 2, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 4, totalWeeklyClasses: 6, approvalStatus: "approved", examType: "Practical", subjectType: "Core" },
+//   { id: "BT205", code: "BT205", name: "Cloud Computing", dept: "CSE", course: "BTech", semester: 2, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 3, labPeriodsPerWeek: 2, totalWeeklyClasses: 5, approvalStatus: "approved", examType: "SEE", subjectType: "Major" },
+//   { id: "BT206", code: "BT206", name: "Artificial Intelligence", dept: "CSE", course: "BTech", semester: 2, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 3, labPeriodsPerWeek: 2, totalWeeklyClasses: 5, approvalStatus: "approved", examType: "Practical", subjectType: "Major" },
+//   { id: "BT207", code: "BT207", name: "Cyber Security", dept: "CSE", course: "BTech", semester: 2, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
+//   { id: "BT208", code: "BT208", name: "Mobile App Development", dept: "CSE", course: "BTech", semester: 2, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 4, totalWeeklyClasses: 6, approvalStatus: "approved", examType: "Practical", subjectType: "Minor" },
+
+//   // ========== BSC (14 subjects - 7 per semester) ==========
+//   // Semester 1 - Core (3), Major (2), Minor (2)
+//   { id: "BS101", code: "BS101", name: "Mathematics I", dept: "CSE", course: "BSc", semester: 1, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Core" },
+//   { id: "BS102", code: "BS102", name: "Programming Fundamentals", dept: "CSE", course: "BSc", semester: 1, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 3, labPeriodsPerWeek: 2, totalWeeklyClasses: 5, approvalStatus: "approved", examType: "Practical", subjectType: "Core" },
+//   { id: "BS103", code: "BS103", name: "Digital Electronics", dept: "CSE", course: "BSc", semester: 1, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Core" },
+//   { id: "BS104", code: "BS104", name: "C Programming", dept: "CSE", course: "BSc", semester: 1, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 4, totalWeeklyClasses: 6, approvalStatus: "approved", examType: "Practical", subjectType: "Major" },
+//   { id: "BS105", code: "BS105", name: "Discrete Mathematics", dept: "CSE", course: "BSc", semester: 1, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Major" },
+//   { id: "BS106", code: "BS106", name: "Computer Organization", dept: "CSE", course: "BSc", semester: 1, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
+//   { id: "BS107", code: "BS107", name: "Office Automation", dept: "CSE", course: "BSc", semester: 1, credits: 2, modules: 3, type: "Theory", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
+  
+//   // Semester 2 - Core (3), Major (2), Minor (2)
+//   { id: "BS201", code: "BS201", name: "Data Analysis", dept: "CSE", course: "BSc", semester: 2, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 2, totalWeeklyClasses: 4, approvalStatus: "approved", examType: "Practical", subjectType: "Core" },
+//   { id: "BS202", code: "BS202", name: "Web Technologies", dept: "CSE", course: "BSc", semester: 2, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 3, labPeriodsPerWeek: 2, totalWeeklyClasses: 5, approvalStatus: "approved", examType: "Practical", subjectType: "Core" },
+//   { id: "BS203", code: "BS203", name: "Database Systems", dept: "CSE", course: "BSc", semester: 2, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 2, totalWeeklyClasses: 4, approvalStatus: "approved", examType: "SEE", subjectType: "Core" },
+//   { id: "BS204", code: "BS204", name: "Python Programming", dept: "CSE", course: "BSc", semester: 2, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 4, totalWeeklyClasses: 6, approvalStatus: "approved", examType: "Practical", subjectType: "Major" },
+//   { id: "BS205", code: "BS205", name: "Computer Graphics", dept: "CSE", course: "BSc", semester: 2, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Major" },
+//   { id: "BS206", code: "BS206", name: "Internet of Things", dept: "CSE", course: "BSc", semester: 2, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
+//   { id: "BS207", code: "BS207", name: "Multimedia Systems", dept: "CSE", course: "BSc", semester: 2, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
+
+//   // ========== BCA (14 subjects - 7 per semester) ==========
+//   // Semester 1 - Core (3), Major (2), Minor (2)
+//   { id: "BC101", code: "BC101", name: "Introduction to Programming", dept: "CSE", course: "BCA", semester: 1, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 2, totalWeeklyClasses: 4, approvalStatus: "approved", examType: "Practical", subjectType: "Core" },
+//   { id: "BC102", code: "BC102", name: "Computer Fundamentals", dept: "CSE", course: "BCA", semester: 1, credits: 2, modules: 3, type: "Theory", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "SEE", subjectType: "Core" },
+//   { id: "BC103", code: "BC103", name: "Mathematics for Computing", dept: "CSE", course: "BCA", semester: 1, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Core" },
+//   { id: "BC104", code: "BC104", name: "C Programming Lab", dept: "CSE", course: "BCA", semester: 1, credits: 2, modules: 3, type: "Lab", theoryClassesPerWeek: 0, labPeriodsPerWeek: 4, totalWeeklyClasses: 4, approvalStatus: "approved", examType: "Practical", subjectType: "Major" },
+//   { id: "BC105", code: "BC105", name: "Digital Logic", dept: "CSE", course: "BCA", semester: 1, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Major" },
+//   { id: "BC106", code: "BC106", name: "Office Automation Tools", dept: "CSE", course: "BCA", semester: 1, credits: 2, modules: 3, type: "Theory", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
+//   { id: "BC107", code: "BC107", name: "Communication Skills", dept: "CSE", course: "BCA", semester: 1, credits: 2, modules: 3, type: "Theory", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "Seminar", subjectType: "Minor" },
+  
+//   // Semester 2 - Core (3), Major (2), Minor (2)
+//   { id: "BC201", code: "BC201", name: "Object Oriented Programming", dept: "CSE", course: "BCA", semester: 2, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 3, labPeriodsPerWeek: 2, totalWeeklyClasses: 5, approvalStatus: "approved", examType: "Practical", subjectType: "Core" },
+//   { id: "BC202", code: "BC202", name: "Data Structures using C++", dept: "CSE", course: "BCA", semester: 2, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 3, labPeriodsPerWeek: 2, totalWeeklyClasses: 5, approvalStatus: "approved", examType: "Practical", subjectType: "Core" },
+//   { id: "BC203", code: "BC203", name: "Software Engineering", dept: "CSE", course: "BCA", semester: 2, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "Seminar", subjectType: "Core" },
+//   { id: "BC204", code: "BC204", name: "Database Management Systems", dept: "CSE", course: "BCA", semester: 2, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 3, labPeriodsPerWeek: 2, totalWeeklyClasses: 5, approvalStatus: "approved", examType: "SEE", subjectType: "Major" },
+//   { id: "BC205", code: "BC205", name: "Internet Technologies", dept: "CSE", course: "BCA", semester: 2, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Major" },
+//   { id: "BC206", code: "BC206", name: "Multimedia Systems", dept: "CSE", course: "BCA", semester: 2, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
+//   { id: "BC207", code: "BC207", name: "Web Design Lab", dept: "CSE", course: "BCA", semester: 2, credits: 2, modules: 3, type: "Lab", theoryClassesPerWeek: 0, labPeriodsPerWeek: 4, totalWeeklyClasses: 4, approvalStatus: "approved", examType: "Practical", subjectType: "Minor" },
+// ];
+
+// // Default Subject Preferences
+// export const DEFAULT_SUBJECT_PREFERENCES = [
+//   { id: 1, facultyId: 3, facultyName: "Dr. Rahul Krishnan", avatar: "RK", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 2, facultyId: 4, facultyName: "Dr. Priya Iyer", avatar: "PI", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 3, facultyId: 5, facultyName: "Dr. Amit Sharma", avatar: "AS", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 4, facultyId: 6, facultyName: "Dr. Neha Gupta", avatar: "NG", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 5, facultyId: 7, facultyName: "Dr. Vikram Singh", avatar: "VS", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 6, facultyId: 8, facultyName: "Dr. Anita Roy", avatar: "AR", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 7, facultyId: 9, facultyName: "Dr. Sanjay Mehta", avatar: "SM", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 8, facultyId: 10, facultyName: "Dr. Pooja Reddy", avatar: "PR", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 9, facultyId: 11, facultyName: "Prof. Suresh Kumar", avatar: "SK", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 10, facultyId: 12, facultyName: "Prof. Deepa Nair", avatar: "DN", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 11, facultyId: 13, facultyName: "Dr. Rajesh Kumar", avatar: "RK", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 12, facultyId: 14, facultyName: "Dr. Kavita Joshi", avatar: "KJ", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 13, facultyId: 15, facultyName: "Dr. Manoj Tiwari", avatar: "MT", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 14, facultyId: 16, facultyName: "Dr. Swati Desai", avatar: "SD", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 15, facultyId: 17, facultyName: "Dr. Alok Mishra", avatar: "AM", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 16, facultyId: 18, facultyName: "Dr. Rekha Verma", avatar: "RV", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 17, facultyId: 19, facultyName: "Dr. Naveen Bhatia", avatar: "NB", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 18, facultyId: 20, facultyName: "Dr. Monica Sethi", avatar: "MS", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 19, facultyId: 21, facultyName: "Dr. Tarun Kapoor", avatar: "TK", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 20, facultyId: 22, facultyName: "Dr. Divya Malhotra", avatar: "DM", status: "pending", submitted: false, feedback: "", preferences: [] },
+// ];
+
+// // Default Rooms (increased)
+// export const DEFAULT_ROOMS = [
+//   { id: "R001", name: "Hall 201", type: "Theory", capacity: 60 },
+//   { id: "R002", name: "Hall 202", type: "Theory", capacity: 60 },
+//   { id: "R003", name: "Hall 203", type: "Theory", capacity: 60 },
+//   { id: "R004", name: "Hall 301", type: "Theory", capacity: 50 },
+//   { id: "R005", name: "Hall 302", type: "Theory", capacity: 50 },
+//   { id: "R006", name: "Hall 303", type: "Theory", capacity: 50 },
+//   { id: "R007", name: "Hall 304", type: "Theory", capacity: 50 },
+//   { id: "R008", name: "Hall 305", type: "Theory", capacity: 50 },
+//   { id: "R009", name: "Lab 1", type: "Lab", capacity: 30 },
+//   { id: "R010", name: "Lab 2", type: "Lab", capacity: 30 },
+//   { id: "R011", name: "Lab 3", type: "Lab", capacity: 30 },
+//   { id: "R012", name: "Lab 4", type: "Lab", capacity: 30 },
+//   { id: "R013", name: "Lab 5", type: "Lab", capacity: 30 },
+//   { id: "R014", name: "Lab 6", type: "Lab", capacity: 30 },
+// ];
+
+// // Default Timetable Configuration
+// export const DEFAULT_TIMETABLE_CONFIG = {
+//   startTime: "09:10",
+//   endTime: "16:50",
+//   classDuration: 50,
+//   breakDuration: 10,
+//   lunchBreak: { start: "12:30", duration: 40 },
+//   days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+// };
+
+// // Default Semester Details - Updated with balanced subjects
+// export const DEFAULT_SEMESTER_DETAILS = {
+//   BTech: {
+//     1: {
+//       subjects: ["BT101", "BT102", "BT103", "BT104", "BT105", "BT106", "BT107", "BT108"],
+//       defaultFaculty: {
+//         "BT101": 3, "BT102": 4, "BT103": 5, "BT104": 6, "BT105": 7, "BT106": 8, "BT107": 9, "BT108": 10
+//       }
+//     },
+//     2: {
+//       subjects: ["BT201", "BT202", "BT203", "BT204", "BT205", "BT206", "BT207", "BT208"],
+//       defaultFaculty: {
+//         "BT201": 3, "BT202": 4, "BT203": 5, "BT204": 6, "BT205": 7, "BT206": 8, "BT207": 9, "BT208": 10
+//       }
+//     }
+//   },
+//   BSc: {
+//     1: {
+//       subjects: ["BS101", "BS102", "BS103", "BS104", "BS105", "BS106", "BS107"],
+//       defaultFaculty: {
+//         "BS101": 11, "BS102": 12, "BS103": 13, "BS104": 14, "BS105": 15, "BS106": 16, "BS107": 11
+//       }
+//     },
+//     2: {
+//       subjects: ["BS201", "BS202", "BS203", "BS204", "BS205", "BS206", "BS207"],
+//       defaultFaculty: {
+//         "BS201": 12, "BS202": 13, "BS203": 14, "BS204": 15, "BS205": 16, "BS206": 11, "BS207": 12
+//       }
+//     }
+//   },
+//   BCA: {
+//     1: {
+//       subjects: ["BC101", "BC102", "BC103", "BC104", "BC105", "BC106", "BC107"],
+//       defaultFaculty: {
+//         "BC101": 17, "BC102": 18, "BC103": 19, "BC104": 20, "BC105": 21, "BC106": 22, "BC107": 17
+//       }
+//     },
+//     2: {
+//       subjects: ["BC201", "BC202", "BC203", "BC204", "BC205", "BC206", "BC207"],
+//       defaultFaculty: {
+//         "BC201": 18, "BC202": 19, "BC203": 20, "BC204": 21, "BC205": 22, "BC206": 17, "BC207": 18
+//       }
+//     }
+//   }
+// };
+
+// // Default Calendar Events
+// export const DEFAULT_CALENDAR_EVENTS = [
+//   { id: 1, title: "Semester Begins", date: "2025-01-10", type: "academic" },
+//   { id: 2, title: "Mid-Semester Exams", date: "2025-03-01", type: "exam" },
+//   { id: 3, title: "End Semester Exams", date: "2025-05-15", type: "exam" },
+//   { id: 4, title: "Timetable Release", date: "2025-01-05", type: "admin" },
+// ];
+
+// // Default Form Status
+// export const DEFAULT_FORM_STATUS = {
+//   isFloated: false,
+//   floatedDate: null,
+//   floatedBy: null,
+//   semester: "2025",
+//   deadline: null
+// };
+
+// // Default Class Teachers
+// export const DEFAULT_CLASS_TEACHERS = {
+//   BTech: { 1: { facultyId: 3, assignedDate: null }, 2: { facultyId: 4, assignedDate: null } },
+//   BSc: { 1: { facultyId: 11, assignedDate: null }, 2: { facultyId: 12, assignedDate: null } },
+//   BCA: { 1: { facultyId: 17, assignedDate: null }, 2: { facultyId: 18, assignedDate: null } }
+// };
+
+// // Default Course Leads
+// export const DEFAULT_COURSE_LEADS = {
+//   BTech: { facultyId: 3, assignedDate: null },
+//   BSc: { facultyId: 11, assignedDate: null },
+//   BCA: { facultyId: 17, assignedDate: null }
+// };
+
+// // Default EA Permissions
+// export const DEFAULT_EA_PERMISSIONS = {
+//   subjectApproval: false,
+//   preferenceApproval: false,
+//   courseApproval: false,
+//   timetableGeneration: false,
+//   viewReports: true,
+//   manageFaculty: false,
+//   viewAllData: true
+// };
+
+// // Default Visiting Faculty Permissions
+// export const DEFAULT_VISITING_FACULTY_PERMISSIONS = {
+//   canViewTimetable: true,
+//   canViewSyllabus: true,
+//   canUpdateSyllabus: false,
+//   canViewProfile: true,
+//   canRequestLeave: true,
+//   canViewStudents: false,
+//   canSubmitGrades: false,
+//   canAccessPreferences: false,
+//   canAccessCourseDetails: false,
+//   canRaiseIssues: true,
+//   maxHoursPerWeek: 8
+// };
+
+// export const DEFAULT_SUBJECT_DELETION_REQUESTS = [];
+
+// // Faculty Location Storage Key (used in components)
+// export const FACULTY_LOCATION_STORAGE_KEY = 'acadplan_faculty_location';
+
+// // Storage Keys
+// export const STORAGE_KEYS = {
+//   FACULTY: 'acadplan_faculty',
+//   SUBJECT_PREFERENCES: 'acadplan_subject_preferences',
+//   SUBJECTS: 'acadplan_subjects',
+//   COURSE_DETAILS: 'acadplan_course_details',
+//   TIMETABLE: 'acadplan_timetable',
+//   SYLLABUS_PROGRESS: 'acadplan_syllabus_progress',
+//   SECTIONS: 'acadplan_sections',
+//   ROOMS: 'acadplan_rooms',
+//   TIMETABLE_CONFIG: 'acadplan_timetable_config',
+//   SEMESTER_DETAILS: 'acadplan_semester_details',
+//   FLAGGED_ISSUES: 'acadplan_flagged_issues',
+//   STUDENT_PROGRESS: 'acadplan_student_progress',
+//   DEAN_APPROVALS: 'acadplan_dean_approvals',
+//   LEAVE_REQUESTS: 'acadplan_leave_requests',
+//   CALENDAR_EVENTS: 'acadplan_calendar_events',
+//   FORM_STATUS: 'acadplan_form_status',
+//   PREFERENCE_SETTINGS: 'acadplan_preference_settings',
+//   FACULTY_PREFERENCE_FORM: 'acadplan_faculty_preference_form',
+//   FACULTY_SUBMISSIONS: 'acadplan_faculty_submissions',
+//   CLASS_TEACHERS: 'acadplan_class_teachers',
+//   COURSE_LEADS: 'acadplan_course_leads',
+//   APPOINTMENTS: 'acadplan_appointments',
+//   EA_PERMISSIONS: 'acadplan_ea_permissions',
+//   MOCK_USERS: 'acadplan_mock_users',
+//   VISITING_FACULTY_PERMISSIONS: 'acadplan_visiting_faculty_permissions',
+//   VISITING_FACULTY_SYLLABUS: 'acadplan_visiting_faculty_syllabus',
+//   VISITING_FACULTY_TIMETABLE: 'acadplan_visiting_faculty_timetable',
+//   SUBJECT_DELETION_REQUESTS: 'acadplan_subject_deletion_requests',
+//   FACULTY_LOCATION: 'acadplan_faculty_location'
+// };
+
+// src/data/mockData.js
+
+// // Mock Users with passwordChanged flag
+// export const MOCK_USERS = [
+//   { id: 1, email: "dean@university.edu", password: "dean123", role: "admin", name: "Dr. Aravind Sharma", avatar: "AS", school: "Central Administration", passwordChanged: true },
+//   { id: 2, email: "coordinator@university.edu", password: "coord123", role: "coordinator", name: "Prof. Meera Nair", avatar: "MN", school: "Timetable Office", passwordChanged: true },
+//   // BTech Faculty (8 faculty)
+//   { id: 3, email: "rahul@university.edu", password: "faculty123", role: "faculty", name: "Dr. Rahul Krishnan", avatar: "RK", school: "SoCSE", designation: "Professor", course: "BTech", passwordChanged: true },
+//   { id: 4, email: "priya@university.edu", password: "faculty123", role: "faculty", name: "Dr. Priya Iyer", avatar: "PI", school: "SoCSE", designation: "Professor", course: "BTech", passwordChanged: true },
+//   { id: 5, email: "amit@university.edu", password: "faculty123", role: "faculty", name: "Dr. Amit Sharma", avatar: "AS", school: "SoCSE", designation: "Associate Professor", course: "BTech", passwordChanged: true },
+//   { id: 6, email: "neha@university.edu", password: "faculty123", role: "faculty", name: "Dr. Neha Gupta", avatar: "NG", school: "SoCSE", designation: "Associate Professor", course: "BTech", passwordChanged: true },
+//   { id: 7, email: "vikram@university.edu", password: "faculty123", role: "faculty", name: "Dr. Vikram Singh", avatar: "VS", school: "SoCSE", designation: "Assistant Professor", course: "BTech", passwordChanged: true },
+//   { id: 8, email: "anita@university.edu", password: "faculty123", role: "faculty", name: "Dr. Anita Roy", avatar: "AR", school: "SoCSE", designation: "Assistant Professor", course: "BTech", passwordChanged: true },
+//   { id: 9, email: "sanjay@university.edu", password: "faculty123", role: "faculty", name: "Dr. Sanjay Mehta", avatar: "SM", school: "SoCSE", designation: "Assistant Professor", course: "BTech", passwordChanged: true },
+//   { id: 10, email: "pooja@university.edu", password: "faculty123", role: "faculty", name: "Dr. Pooja Reddy", avatar: "PR", school: "SoCSE", designation: "Assistant Professor", course: "BTech", passwordChanged: true },
+//   // BSc Faculty (8 faculty - increased from 6)
+//   { id: 11, email: "suresh@university.edu", password: "faculty123", role: "faculty", name: "Prof. Suresh Kumar", avatar: "SK", school: "SoCSE", designation: "Professor", course: "BSc", passwordChanged: true },
+//   { id: 12, email: "deepa@university.edu", password: "faculty123", role: "faculty", name: "Prof. Deepa Nair", avatar: "DN", school: "SoCSE", designation: "Professor", course: "BSc", passwordChanged: true },
+//   { id: 13, email: "rajesh@university.edu", password: "faculty123", role: "faculty", name: "Dr. Rajesh Kumar", avatar: "RK", school: "SoCSE", designation: "Associate Professor", course: "BSc", passwordChanged: true },
+//   { id: 14, email: "kavita@university.edu", password: "faculty123", role: "faculty", name: "Dr. Kavita Joshi", avatar: "KJ", school: "SoCSE", designation: "Assistant Professor", course: "BSc", passwordChanged: true },
+//   { id: 15, email: "manoj@university.edu", password: "faculty123", role: "faculty", name: "Dr. Manoj Tiwari", avatar: "MT", school: "SoCSE", designation: "Assistant Professor", course: "BSc", passwordChanged: true },
+//   { id: 16, email: "swati@university.edu", password: "faculty123", role: "faculty", name: "Dr. Swati Desai", avatar: "SD", school: "SoCSE", designation: "Assistant Professor", course: "BSc", passwordChanged: true },
+//   { id: 23, email: "ramesh@university.edu", password: "faculty123", role: "faculty", name: "Dr. Ramesh Kulkarni", avatar: "RK", school: "SoCSE", designation: "Assistant Professor", course: "BSc", passwordChanged: true },
+//   { id: 24, email: "sneha@university.edu", password: "faculty123", role: "faculty", name: "Dr. Sneha Patil", avatar: "SP", school: "SoCSE", designation: "Assistant Professor", course: "BSc", passwordChanged: true },
+//   // BCA Faculty (8 faculty - increased from 6)
+//   { id: 17, email: "alok@university.edu", password: "faculty123", role: "faculty", name: "Dr. Alok Mishra", avatar: "AM", school: "SoCSE", designation: "Professor", course: "BCA", passwordChanged: true },
+//   { id: 18, email: "rekha@university.edu", password: "faculty123", role: "faculty", name: "Dr. Rekha Verma", avatar: "RV", school: "SoCSE", designation: "Associate Professor", course: "BCA", passwordChanged: true },
+//   { id: 19, email: "naveen@university.edu", password: "faculty123", role: "faculty", name: "Dr. Naveen Bhatia", avatar: "NB", school: "SoCSE", designation: "Assistant Professor", course: "BCA", passwordChanged: true },
+//   { id: 20, email: "monica@university.edu", password: "faculty123", role: "faculty", name: "Dr. Monica Sethi", avatar: "MS", school: "SoCSE", designation: "Assistant Professor", course: "BCA", passwordChanged: true },
+//   { id: 21, email: "tarun@university.edu", password: "faculty123", role: "faculty", name: "Dr. Tarun Kapoor", avatar: "TK", school: "SoCSE", designation: "Assistant Professor", course: "BCA", passwordChanged: true },
+//   { id: 22, email: "divya@university.edu", password: "faculty123", role: "faculty", name: "Dr. Divya Malhotra", avatar: "DM", school: "SoCSE", designation: "Assistant Professor", course: "BCA", passwordChanged: true },
+//   { id: 25, email: "kiran@university.edu", password: "faculty123", role: "faculty", name: "Dr. Kiran Desai", avatar: "KD", school: "SoCSE", designation: "Assistant Professor", course: "BCA", passwordChanged: true },
+//   { id: 26, email: "meera@university.edu", password: "faculty123", role: "faculty", name: "Dr. Meera Joshi", avatar: "MJ", school: "SoCSE", designation: "Assistant Professor", course: "BCA", passwordChanged: true },
+//   // Students
+//   { id: 27, email: "student.btech@university.edu", password: "student123", role: "student", name: "Rohan Mehta", avatar: "RM", course: "BTech", semester: 1, section: "A", passwordChanged: true },
+//   { id: 28, email: "student.bsc@university.edu", password: "student123", role: "student", name: "Priya Sharma", avatar: "PS", course: "BSc", semester: 1, section: "B", passwordChanged: true },
+//   { id: 29, email: "student.bca@university.edu", password: "student123", role: "student", name: "Arjun Kumar", avatar: "AK", course: "BCA", semester: 2, section: "C", passwordChanged: true },
+//   // Director
+//   { id: 30, email: "director@university.edu", password: "director123", role: "director", name: "Prof. Rajesh Menon", avatar: "RM", school: "School of CSE", passwordChanged: true },
+//   // EA
+//   { id: 31, email: "ea@university.edu", password: "ea123", role: "ea", name: "Sarah Johnson", avatar: "SJ", school: "Dean's Office", passwordChanged: true },
+//   // Visiting Faculty
+//   { id: 32, email: "visiting@university.edu", password: "visiting123", role: "visiting_faculty", name: "Dr. James Wilson", avatar: "JW", school: "SoCSE", designation: "Visiting Professor", course: "BTech", passwordChanged: true },
+// ];
+
+// // Courses, Semesters, Sections
+// export const COURSES = ["BTech", "BSc", "BCA"];
+// export const SEMESTERS = [1, 2];
+// export const SECTIONS = ["A", "B", "C"];
+
+// // Exam Types and Subject Types
+// export const EXAM_TYPES = ["SEE", "Practical", "Seminar"];
+// export const SUBJECT_TYPES = ["Core", "Major", "Minor"];
+
+// // Workload Limits based on designation
+// export const WORKLOAD_LIMITS = {
+//   "Assistant Professor": 14,
+//   "Associate Professor": 12,
+//   "Professor": 10,
+// };
+
+// // Default Faculty Data with Location Fields (Increased for all departments)
+// export const DEFAULT_FACULTY = [
+//   // BTech Faculty (8 faculty - 100 hours total)
+//   { id: 3, facultyId: "FAC001", name: "Dr. Rahul Krishnan", avatar: "RK", dept: "CSE", designation: "Professor", specialization: "Data Structures, Algorithms", course: "BTech", maxHours: 10, assignedHours: 0, remainingHours: 10, preferences: [], color: "#4361ee", email: "rahul@university.edu", block: "Academic Block A", floor: "3rd Floor", roomNumber: "301", cabinLocation: "A-301" },
+//   { id: 4, facultyId: "FAC002", name: "Dr. Priya Iyer", avatar: "PI", dept: "CSE", designation: "Professor", specialization: "Machine Learning, AI", course: "BTech", maxHours: 10, assignedHours: 0, remainingHours: 10, preferences: [], color: "#9d4edd", email: "priya@university.edu", block: "Academic Block A", floor: "3rd Floor", roomNumber: "302", cabinLocation: "A-302" },
+//   { id: 5, facultyId: "FAC003", name: "Dr. Amit Sharma", avatar: "AS", dept: "CSE", designation: "Associate Professor", specialization: "DBMS, OS", course: "BTech", maxHours: 12, assignedHours: 0, remainingHours: 12, preferences: [], color: "#06d6a0", email: "amit@university.edu", block: "Academic Block A", floor: "2nd Floor", roomNumber: "201", cabinLocation: "A-201" },
+//   { id: 6, facultyId: "FAC004", name: "Dr. Neha Gupta", avatar: "NG", dept: "CSE", designation: "Associate Professor", specialization: "Computer Networks, Security", course: "BTech", maxHours: 12, assignedHours: 0, remainingHours: 12, preferences: [], color: "#ffb703", email: "neha@university.edu", block: "Academic Block A", floor: "2nd Floor", roomNumber: "202", cabinLocation: "A-202" },
+//   { id: 7, facultyId: "FAC005", name: "Dr. Vikram Singh", avatar: "VS", dept: "CSE", designation: "Assistant Professor", specialization: "Web Development, React", course: "BTech", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#e3646b", email: "vikram@university.edu", block: "Academic Block B", floor: "1st Floor", roomNumber: "101", cabinLocation: "B-101" },
+//   { id: 8, facultyId: "FAC006", name: "Dr. Anita Roy", avatar: "AR", dept: "CSE", designation: "Assistant Professor", specialization: "Python, Data Science", course: "BTech", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#6b705c", email: "anita@university.edu", block: "Academic Block B", floor: "1st Floor", roomNumber: "102", cabinLocation: "B-102" },
+//   { id: 9, facultyId: "FAC007", name: "Dr. Sanjay Mehta", avatar: "SM", dept: "CSE", designation: "Assistant Professor", specialization: "Cloud Computing, DevOps", course: "BTech", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#118ab2", email: "sanjay@university.edu", block: "Academic Block B", floor: "2nd Floor", roomNumber: "201", cabinLocation: "B-201" },
+//   { id: 10, facultyId: "FAC008", name: "Dr. Pooja Reddy", avatar: "PR", dept: "CSE", designation: "Assistant Professor", specialization: "Software Engineering, Testing", course: "BTech", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#ef476f", email: "pooja@university.edu", block: "Academic Block B", floor: "2nd Floor", roomNumber: "202", cabinLocation: "B-202" },
+  
+//   // BSc Faculty (8 faculty - 100 hours total)
+//   { id: 11, facultyId: "FAC009", name: "Prof. Suresh Kumar", avatar: "SK", dept: "CSE", designation: "Professor", specialization: "Mathematics, Discrete Structures", course: "BSc", maxHours: 10, assignedHours: 0, remainingHours: 10, preferences: [], color: "#ffb703", email: "suresh@university.edu", block: "Science Block", floor: "2nd Floor", roomNumber: "201", cabinLocation: "S-201" },
+//   { id: 12, facultyId: "FAC010", name: "Prof. Deepa Nair", avatar: "DN", dept: "CSE", designation: "Professor", specialization: "Programming Fundamentals, C", course: "BSc", maxHours: 10, assignedHours: 0, remainingHours: 10, preferences: [], color: "#6b705c", email: "deepa@university.edu", block: "Science Block", floor: "2nd Floor", roomNumber: "202", cabinLocation: "S-202" },
+//   { id: 13, facultyId: "FAC011", name: "Dr. Rajesh Kumar", avatar: "RK", dept: "CSE", designation: "Associate Professor", specialization: "Database Systems, SQL", course: "BSc", maxHours: 12, assignedHours: 0, remainingHours: 12, preferences: [], color: "#9d4edd", email: "rajesh@university.edu", block: "Science Block", floor: "1st Floor", roomNumber: "101", cabinLocation: "S-101" },
+//   { id: 14, facultyId: "FAC012", name: "Dr. Kavita Joshi", avatar: "KJ", dept: "CSE", designation: "Assistant Professor", specialization: "Web Technologies, HTML/CSS", course: "BSc", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#06d6a0", email: "kavita@university.edu", block: "Science Block", floor: "1st Floor", roomNumber: "102", cabinLocation: "S-102" },
+//   { id: 15, facultyId: "FAC013", name: "Dr. Manoj Tiwari", avatar: "MT", dept: "CSE", designation: "Assistant Professor", specialization: "Data Analysis, Python", course: "BSc", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#e3646b", email: "manoj@university.edu", block: "Science Block", floor: "Ground Floor", roomNumber: "001", cabinLocation: "S-001" },
+//   { id: 16, facultyId: "FAC014", name: "Dr. Swati Desai", avatar: "SD", dept: "CSE", designation: "Assistant Professor", specialization: "Computer Graphics, Multimedia", course: "BSc", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#118ab2", email: "swati@university.edu", block: "Science Block", floor: "Ground Floor", roomNumber: "002", cabinLocation: "S-002" },
+//   { id: 23, facultyId: "FAC021", name: "Dr. Ramesh Kulkarni", avatar: "RK", dept: "CSE", designation: "Assistant Professor", specialization: "Environmental Science, Linux", course: "BSc", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#2ecc71", email: "ramesh@university.edu", block: "Science Block", floor: "3rd Floor", roomNumber: "301", cabinLocation: "S-301" },
+//   { id: 24, facultyId: "FAC022", name: "Dr. Sneha Patil", avatar: "SP", dept: "CSE", designation: "Assistant Professor", specialization: "Cloud Computing, Entrepreneurship", course: "BSc", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#e67e22", email: "sneha@university.edu", block: "Science Block", floor: "3rd Floor", roomNumber: "302", cabinLocation: "S-302" },
+  
+//   // BCA Faculty (8 faculty - 100 hours total)
+//   { id: 17, facultyId: "FAC015", name: "Dr. Alok Mishra", avatar: "AM", dept: "CSE", designation: "Professor", specialization: "Object Oriented Programming, C++", course: "BCA", maxHours: 10, assignedHours: 0, remainingHours: 10, preferences: [], color: "#4361ee", email: "alok@university.edu", block: "Academic Block C", floor: "2nd Floor", roomNumber: "201", cabinLocation: "C-201" },
+//   { id: 18, facultyId: "FAC016", name: "Dr. Rekha Verma", avatar: "RV", dept: "CSE", designation: "Associate Professor", specialization: "Data Structures, Algorithms", course: "BCA", maxHours: 12, assignedHours: 0, remainingHours: 12, preferences: [], color: "#ffb703", email: "rekha@university.edu", block: "Academic Block C", floor: "2nd Floor", roomNumber: "202", cabinLocation: "C-202" },
+//   { id: 19, facultyId: "FAC017", name: "Dr. Naveen Bhatia", avatar: "NB", dept: "CSE", designation: "Assistant Professor", specialization: "Software Engineering, Testing", course: "BCA", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#9d4edd", email: "naveen@university.edu", block: "Academic Block C", floor: "1st Floor", roomNumber: "101", cabinLocation: "C-101" },
+//   { id: 20, facultyId: "FAC018", name: "Dr. Monica Sethi", avatar: "MS", dept: "CSE", designation: "Assistant Professor", specialization: "Database Management, SQL", course: "BCA", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#06d6a0", email: "monica@university.edu", block: "Academic Block C", floor: "1st Floor", roomNumber: "102", cabinLocation: "C-102" },
+//   { id: 21, facultyId: "FAC019", name: "Dr. Tarun Kapoor", avatar: "TK", dept: "CSE", designation: "Assistant Professor", specialization: "Internet Technologies, Web Dev", course: "BCA", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#e3646b", email: "tarun@university.edu", block: "Academic Block C", floor: "Ground Floor", roomNumber: "001", cabinLocation: "C-001" },
+//   { id: 22, facultyId: "FAC020", name: "Dr. Divya Malhotra", avatar: "DM", dept: "CSE", designation: "Assistant Professor", specialization: "Multimedia Systems, Graphics", course: "BCA", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#118ab2", email: "divya@university.edu", block: "Academic Block C", floor: "Ground Floor", roomNumber: "002", cabinLocation: "C-002" },
+//   { id: 25, facultyId: "FAC023", name: "Dr. Kiran Desai", avatar: "KD", dept: "CSE", designation: "Assistant Professor", specialization: "E-Commerce, Cyber Security", course: "BCA", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#3498db", email: "kiran@university.edu", block: "Academic Block C", floor: "3rd Floor", roomNumber: "301", cabinLocation: "C-301" },
+//   { id: 26, facultyId: "FAC024", name: "Dr. Meera Joshi", avatar: "MJ", dept: "CSE", designation: "Assistant Professor", specialization: "Data Science, Python", course: "BCA", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#1abc9c", email: "meera@university.edu", block: "Academic Block C", floor: "3rd Floor", roomNumber: "302", cabinLocation: "C-302" },
+// ];
+
+// // Default Subjects - Balanced for each course (10 subjects per semester)
+// export const DEFAULT_SUBJECTS = [
+//   // ========== BTECH (16 subjects - 8 per semester) ==========
+//   // Semester 1 - Core (4), Major (2), Minor (2)
+//   { id: "BT101", code: "BT101", name: "Data Structures", dept: "CSE", course: "BTech", semester: 1, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 3, labPeriodsPerWeek: 2, totalWeeklyClasses: 5, approvalStatus: "approved", examType: "SEE", subjectType: "Core" },
+//   { id: "BT102", code: "BT102", name: "Algorithms", dept: "CSE", course: "BTech", semester: 1, credits: 4, modules: 5, type: "Theory", theoryClassesPerWeek: 4, labPeriodsPerWeek: 0, totalWeeklyClasses: 4, approvalStatus: "approved", examType: "SEE", subjectType: "Core" },
+//   { id: "BT103", code: "BT103", name: "Database Management Systems", dept: "CSE", course: "BTech", semester: 1, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 2, totalWeeklyClasses: 4, approvalStatus: "approved", examType: "SEE", subjectType: "Core" },
+//   { id: "BT104", code: "BT104", name: "Object Oriented Programming", dept: "CSE", course: "BTech", semester: 1, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 3, labPeriodsPerWeek: 2, totalWeeklyClasses: 5, approvalStatus: "approved", examType: "Practical", subjectType: "Core" },
+//   { id: "BT105", code: "BT105", name: "Advanced Data Structures", dept: "CSE", course: "BTech", semester: 1, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 3, labPeriodsPerWeek: 2, totalWeeklyClasses: 5, approvalStatus: "approved", examType: "SEE", subjectType: "Major" },
+//   { id: "BT106", code: "BT106", name: "Machine Learning Basics", dept: "CSE", course: "BTech", semester: 1, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 3, labPeriodsPerWeek: 2, totalWeeklyClasses: 5, approvalStatus: "approved", examType: "Practical", subjectType: "Major" },
+//   { id: "BT107", code: "BT107", name: "Discrete Mathematics", dept: "CSE", course: "BTech", semester: 1, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
+//   { id: "BT108", code: "BT108", name: "Digital Logic Design", dept: "CSE", course: "BTech", semester: 1, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
+  
+//   // Semester 2 - Core (4), Major (2), Minor (2)
+//   { id: "BT201", code: "BT201", name: "Operating Systems", dept: "CSE", course: "BTech", semester: 2, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 2, totalWeeklyClasses: 4, approvalStatus: "approved", examType: "SEE", subjectType: "Core" },
+//   { id: "BT202", code: "BT202", name: "Computer Networks", dept: "CSE", course: "BTech", semester: 2, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 2, totalWeeklyClasses: 4, approvalStatus: "approved", examType: "SEE", subjectType: "Core" },
+//   { id: "BT203", code: "BT203", name: "Software Engineering", dept: "CSE", course: "BTech", semester: 2, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "Seminar", subjectType: "Core" },
+//   { id: "BT204", code: "BT204", name: "Web Development", dept: "CSE", course: "BTech", semester: 2, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 4, totalWeeklyClasses: 6, approvalStatus: "approved", examType: "Practical", subjectType: "Core" },
+//   { id: "BT205", code: "BT205", name: "Cloud Computing", dept: "CSE", course: "BTech", semester: 2, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 3, labPeriodsPerWeek: 2, totalWeeklyClasses: 5, approvalStatus: "approved", examType: "SEE", subjectType: "Major" },
+//   { id: "BT206", code: "BT206", name: "Artificial Intelligence", dept: "CSE", course: "BTech", semester: 2, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 3, labPeriodsPerWeek: 2, totalWeeklyClasses: 5, approvalStatus: "approved", examType: "Practical", subjectType: "Major" },
+//   { id: "BT207", code: "BT207", name: "Cyber Security", dept: "CSE", course: "BTech", semester: 2, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
+//   { id: "BT208", code: "BT208", name: "Mobile App Development", dept: "CSE", course: "BTech", semester: 2, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 4, totalWeeklyClasses: 6, approvalStatus: "approved", examType: "Practical", subjectType: "Minor" },
+
+//   // ========== BSC (20 subjects - 10 per semester) ==========
+//   // Semester 1 - Core (3), Major (4), Minor (3)
+//   { id: "BS101", code: "BS101", name: "Mathematics I", dept: "CSE", course: "BSc", semester: 1, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Core" },
+//   { id: "BS102", code: "BS102", name: "Programming Fundamentals", dept: "CSE", course: "BSc", semester: 1, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 3, labPeriodsPerWeek: 2, totalWeeklyClasses: 5, approvalStatus: "approved", examType: "Practical", subjectType: "Core" },
+//   { id: "BS103", code: "BS103", name: "Digital Electronics", dept: "CSE", course: "BSc", semester: 1, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Core" },
+//   { id: "BS104", code: "BS104", name: "C Programming", dept: "CSE", course: "BSc", semester: 1, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 4, totalWeeklyClasses: 6, approvalStatus: "approved", examType: "Practical", subjectType: "Major" },
+//   { id: "BS105", code: "BS105", name: "Discrete Mathematics", dept: "CSE", course: "BSc", semester: 1, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Major" },
+//   { id: "BS106", code: "BS106", name: "Computer Organization", dept: "CSE", course: "BSc", semester: 1, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
+//   { id: "BS107", code: "BS107", name: "Office Automation", dept: "CSE", course: "BSc", semester: 1, credits: 2, modules: 3, type: "Theory", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
+//   { id: "BS108", code: "BS108", name: "Environmental Science", dept: "CSE", course: "BSc", semester: 1, credits: 2, modules: 3, type: "Theory", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
+//   { id: "BS109", code: "BS109", name: "English Communication", dept: "CSE", course: "BSc", semester: 1, credits: 2, modules: 3, type: "Theory", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "Seminar", subjectType: "Minor" },
+//   { id: "BS110", code: "BS110", name: "Data Structures Lab", dept: "CSE", course: "BSc", semester: 1, credits: 2, modules: 3, type: "Lab", theoryClassesPerWeek: 0, labPeriodsPerWeek: 4, totalWeeklyClasses: 4, approvalStatus: "approved", examType: "Practical", subjectType: "Major" },
+  
+//   // Semester 2 - Core (3), Major (4), Minor (3)
+//   { id: "BS201", code: "BS201", name: "Data Analysis", dept: "CSE", course: "BSc", semester: 2, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 2, totalWeeklyClasses: 4, approvalStatus: "approved", examType: "Practical", subjectType: "Core" },
+//   { id: "BS202", code: "BS202", name: "Web Technologies", dept: "CSE", course: "BSc", semester: 2, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 3, labPeriodsPerWeek: 2, totalWeeklyClasses: 5, approvalStatus: "approved", examType: "Practical", subjectType: "Core" },
+//   { id: "BS203", code: "BS203", name: "Database Systems", dept: "CSE", course: "BSc", semester: 2, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 2, totalWeeklyClasses: 4, approvalStatus: "approved", examType: "SEE", subjectType: "Core" },
+//   { id: "BS204", code: "BS204", name: "Python Programming", dept: "CSE", course: "BSc", semester: 2, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 4, totalWeeklyClasses: 6, approvalStatus: "approved", examType: "Practical", subjectType: "Major" },
+//   { id: "BS205", code: "BS205", name: "Computer Graphics", dept: "CSE", course: "BSc", semester: 2, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Major" },
+//   { id: "BS206", code: "BS206", name: "Internet of Things", dept: "CSE", course: "BSc", semester: 2, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
+//   { id: "BS207", code: "BS207", name: "Multimedia Systems", dept: "CSE", course: "BSc", semester: 2, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
+//   { id: "BS208", code: "BS208", name: "Entrepreneurship", dept: "CSE", course: "BSc", semester: 2, credits: 2, modules: 3, type: "Theory", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "Seminar", subjectType: "Minor" },
+//   { id: "BS209", code: "BS209", name: "Linux Programming", dept: "CSE", course: "BSc", semester: 2, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 2, totalWeeklyClasses: 4, approvalStatus: "approved", examType: "Practical", subjectType: "Major" },
+//   { id: "BS210", code: "BS210", name: "Cloud Fundamentals", dept: "CSE", course: "BSc", semester: 2, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 2, totalWeeklyClasses: 4, approvalStatus: "approved", examType: "SEE", subjectType: "Major" },
+
+//   // ========== BCA (20 subjects - 10 per semester) ==========
+//   // Semester 1 - Core (3), Major (4), Minor (3)
+//   { id: "BC101", code: "BC101", name: "Introduction to Programming", dept: "CSE", course: "BCA", semester: 1, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 2, totalWeeklyClasses: 4, approvalStatus: "approved", examType: "Practical", subjectType: "Core" },
+//   { id: "BC102", code: "BC102", name: "Computer Fundamentals", dept: "CSE", course: "BCA", semester: 1, credits: 2, modules: 3, type: "Theory", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "SEE", subjectType: "Core" },
+//   { id: "BC103", code: "BC103", name: "Mathematics for Computing", dept: "CSE", course: "BCA", semester: 1, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Core" },
+//   { id: "BC104", code: "BC104", name: "C Programming Lab", dept: "CSE", course: "BCA", semester: 1, credits: 2, modules: 3, type: "Lab", theoryClassesPerWeek: 0, labPeriodsPerWeek: 4, totalWeeklyClasses: 4, approvalStatus: "approved", examType: "Practical", subjectType: "Major" },
+//   { id: "BC105", code: "BC105", name: "Digital Logic", dept: "CSE", course: "BCA", semester: 1, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Major" },
+//   { id: "BC106", code: "BC106", name: "Office Automation Tools", dept: "CSE", course: "BCA", semester: 1, credits: 2, modules: 3, type: "Theory", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
+//   { id: "BC107", code: "BC107", name: "Communication Skills", dept: "CSE", course: "BCA", semester: 1, credits: 2, modules: 3, type: "Theory", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "Seminar", subjectType: "Minor" },
+//   { id: "BC108", code: "BC108", name: "Financial Accounting", dept: "CSE", course: "BCA", semester: 1, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
+//   { id: "BC109", code: "BC109", name: "Business Communication", dept: "CSE", course: "BCA", semester: 1, credits: 2, modules: 3, type: "Theory", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "Seminar", subjectType: "Minor" },
+//   { id: "BC110", code: "BC110", name: "Advanced C Programming", dept: "CSE", course: "BCA", semester: 1, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 2, totalWeeklyClasses: 4, approvalStatus: "approved", examType: "Practical", subjectType: "Major" },
+  
+//   // Semester 2 - Core (3), Major (4), Minor (3)
+//   { id: "BC201", code: "BC201", name: "Object Oriented Programming", dept: "CSE", course: "BCA", semester: 2, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 3, labPeriodsPerWeek: 2, totalWeeklyClasses: 5, approvalStatus: "approved", examType: "Practical", subjectType: "Core" },
+//   { id: "BC202", code: "BC202", name: "Data Structures using C++", dept: "CSE", course: "BCA", semester: 2, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 3, labPeriodsPerWeek: 2, totalWeeklyClasses: 5, approvalStatus: "approved", examType: "Practical", subjectType: "Core" },
+//   { id: "BC203", code: "BC203", name: "Software Engineering", dept: "CSE", course: "BCA", semester: 2, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "Seminar", subjectType: "Core" },
+//   { id: "BC204", code: "BC204", name: "Database Management Systems", dept: "CSE", course: "BCA", semester: 2, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 3, labPeriodsPerWeek: 2, totalWeeklyClasses: 5, approvalStatus: "approved", examType: "SEE", subjectType: "Major" },
+//   { id: "BC205", code: "BC205", name: "Internet Technologies", dept: "CSE", course: "BCA", semester: 2, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Major" },
+//   { id: "BC206", code: "BC206", name: "Multimedia Systems", dept: "CSE", course: "BCA", semester: 2, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
+//   { id: "BC207", code: "BC207", name: "Web Design Lab", dept: "CSE", course: "BCA", semester: 2, credits: 2, modules: 3, type: "Lab", theoryClassesPerWeek: 0, labPeriodsPerWeek: 4, totalWeeklyClasses: 4, approvalStatus: "approved", examType: "Practical", subjectType: "Minor" },
+//   { id: "BC208", code: "BC208", name: "E-Commerce", dept: "CSE", course: "BCA", semester: 2, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
+//   { id: "BC209", code: "BC209", name: "Python for Data Science", dept: "CSE", course: "BCA", semester: 2, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 4, totalWeeklyClasses: 6, approvalStatus: "approved", examType: "Practical", subjectType: "Major" },
+//   { id: "BC210", code: "BC210", name: "Cyber Security Basics", dept: "CSE", course: "BCA", semester: 2, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Major" },
+// ];
+
+// // Default Subject Preferences
+// export const DEFAULT_SUBJECT_PREFERENCES = [
+//   { id: 1, facultyId: 3, facultyName: "Dr. Rahul Krishnan", avatar: "RK", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 2, facultyId: 4, facultyName: "Dr. Priya Iyer", avatar: "PI", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 3, facultyId: 5, facultyName: "Dr. Amit Sharma", avatar: "AS", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 4, facultyId: 6, facultyName: "Dr. Neha Gupta", avatar: "NG", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 5, facultyId: 7, facultyName: "Dr. Vikram Singh", avatar: "VS", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 6, facultyId: 8, facultyName: "Dr. Anita Roy", avatar: "AR", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 7, facultyId: 9, facultyName: "Dr. Sanjay Mehta", avatar: "SM", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 8, facultyId: 10, facultyName: "Dr. Pooja Reddy", avatar: "PR", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 9, facultyId: 11, facultyName: "Prof. Suresh Kumar", avatar: "SK", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 10, facultyId: 12, facultyName: "Prof. Deepa Nair", avatar: "DN", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 11, facultyId: 13, facultyName: "Dr. Rajesh Kumar", avatar: "RK", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 12, facultyId: 14, facultyName: "Dr. Kavita Joshi", avatar: "KJ", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 13, facultyId: 15, facultyName: "Dr. Manoj Tiwari", avatar: "MT", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 14, facultyId: 16, facultyName: "Dr. Swati Desai", avatar: "SD", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 15, facultyId: 17, facultyName: "Dr. Alok Mishra", avatar: "AM", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 16, facultyId: 18, facultyName: "Dr. Rekha Verma", avatar: "RV", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 17, facultyId: 19, facultyName: "Dr. Naveen Bhatia", avatar: "NB", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 18, facultyId: 20, facultyName: "Dr. Monica Sethi", avatar: "MS", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 19, facultyId: 21, facultyName: "Dr. Tarun Kapoor", avatar: "TK", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 20, facultyId: 22, facultyName: "Dr. Divya Malhotra", avatar: "DM", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 21, facultyId: 23, facultyName: "Dr. Ramesh Kulkarni", avatar: "RK", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 22, facultyId: 24, facultyName: "Dr. Sneha Patil", avatar: "SP", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 23, facultyId: 25, facultyName: "Dr. Kiran Desai", avatar: "KD", status: "pending", submitted: false, feedback: "", preferences: [] },
+//   { id: 24, facultyId: 26, facultyName: "Dr. Meera Joshi", avatar: "MJ", status: "pending", submitted: false, feedback: "", preferences: [] },
+// ];
+
+// // Default Rooms (increased)
+// export const DEFAULT_ROOMS = [
+//   { id: "R001", name: "Hall 201", type: "Theory", capacity: 60 },
+//   { id: "R002", name: "Hall 202", type: "Theory", capacity: 60 },
+//   { id: "R003", name: "Hall 203", type: "Theory", capacity: 60 },
+//   { id: "R004", name: "Hall 301", type: "Theory", capacity: 50 },
+//   { id: "R005", name: "Hall 302", type: "Theory", capacity: 50 },
+//   { id: "R006", name: "Hall 303", type: "Theory", capacity: 50 },
+//   { id: "R007", name: "Hall 304", type: "Theory", capacity: 50 },
+//   { id: "R008", name: "Hall 305", type: "Theory", capacity: 50 },
+//   { id: "R009", name: "Lab 1", type: "Lab", capacity: 30 },
+//   { id: "R010", name: "Lab 2", type: "Lab", capacity: 30 },
+//   { id: "R011", name: "Lab 3", type: "Lab", capacity: 30 },
+//   { id: "R012", name: "Lab 4", type: "Lab", capacity: 30 },
+//   { id: "R013", name: "Lab 5", type: "Lab", capacity: 30 },
+//   { id: "R014", name: "Lab 6", type: "Lab", capacity: 30 },
+// ];
+
+// // Default Timetable Configuration
+// export const DEFAULT_TIMETABLE_CONFIG = {
+//   startTime: "09:10",
+//   endTime: "16:50",
+//   classDuration: 50,
+//   breakDuration: 10,
+//   lunchBreak: { start: "12:30", duration: 40 },
+//   days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+// };
+
+// // Default Semester Details - Updated with 10 subjects per semester
+// export const DEFAULT_SEMESTER_DETAILS = {
+//   BTech: {
+//     1: {
+//       subjects: ["BT101", "BT102", "BT103", "BT104", "BT105", "BT106", "BT107", "BT108"],
+//       defaultFaculty: {
+//         "BT101": 3, "BT102": 4, "BT103": 5, "BT104": 6, "BT105": 7, "BT106": 8, "BT107": 9, "BT108": 10
+//       }
+//     },
+//     2: {
+//       subjects: ["BT201", "BT202", "BT203", "BT204", "BT205", "BT206", "BT207", "BT208"],
+//       defaultFaculty: {
+//         "BT201": 3, "BT202": 4, "BT203": 5, "BT204": 6, "BT205": 7, "BT206": 8, "BT207": 9, "BT208": 10
+//       }
+//     }
+//   },
+//   BSc: {
+//     1: {
+//       subjects: ["BS101", "BS102", "BS103", "BS104", "BS105", "BS106", "BS107", "BS108", "BS109", "BS110"],
+//       defaultFaculty: {
+//         "BS101": 11, "BS102": 12, "BS103": 13, "BS104": 14, "BS105": 15, "BS106": 16, "BS107": 11,
+//         "BS108": 12, "BS109": 13, "BS110": 14
+//       }
+//     },
+//     2: {
+//       subjects: ["BS201", "BS202", "BS203", "BS204", "BS205", "BS206", "BS207", "BS208", "BS209", "BS210"],
+//       defaultFaculty: {
+//         "BS201": 12, "BS202": 13, "BS203": 14, "BS204": 15, "BS205": 16, "BS206": 11, "BS207": 12,
+//         "BS208": 13, "BS209": 14, "BS210": 15
+//       }
+//     }
+//   },
+//   BCA: {
+//     1: {
+//       subjects: ["BC101", "BC102", "BC103", "BC104", "BC105", "BC106", "BC107", "BC108", "BC109", "BC110"],
+//       defaultFaculty: {
+//         "BC101": 17, "BC102": 18, "BC103": 19, "BC104": 20, "BC105": 21, "BC106": 22, "BC107": 17,
+//         "BC108": 18, "BC109": 19, "BC110": 20
+//       }
+//     },
+//     2: {
+//       subjects: ["BC201", "BC202", "BC203", "BC204", "BC205", "BC206", "BC207", "BC208", "BC209", "BC210"],
+//       defaultFaculty: {
+//         "BC201": 18, "BC202": 19, "BC203": 20, "BC204": 21, "BC205": 22, "BC206": 17, "BC207": 18,
+//         "BC208": 19, "BC209": 20, "BC210": 21
+//       }
+//     }
+//   }
+// };
+
+// // Default Calendar Events
+// export const DEFAULT_CALENDAR_EVENTS = [
+//   { id: 1, title: "Semester Begins", date: "2025-01-10", type: "academic" },
+//   { id: 2, title: "Mid-Semester Exams", date: "2025-03-01", type: "exam" },
+//   { id: 3, title: "End Semester Exams", date: "2025-05-15", type: "exam" },
+//   { id: 4, title: "Timetable Release", date: "2025-01-05", type: "admin" },
+// ];
+
+// // Default Form Status
+// export const DEFAULT_FORM_STATUS = {
+//   isFloated: false,
+//   floatedDate: null,
+//   floatedBy: null,
+//   semester: "2025",
+//   deadline: null
+// };
+
+// // Default Class Teachers
+// export const DEFAULT_CLASS_TEACHERS = {
+//   BTech: { 1: { facultyId: 3, assignedDate: null }, 2: { facultyId: 4, assignedDate: null } },
+//   BSc: { 1: { facultyId: 11, assignedDate: null }, 2: { facultyId: 12, assignedDate: null } },
+//   BCA: { 1: { facultyId: 17, assignedDate: null }, 2: { facultyId: 18, assignedDate: null } }
+// };
+
+// // Default Course Leads
+// export const DEFAULT_COURSE_LEADS = {
+//   BTech: { facultyId: 3, assignedDate: null },
+//   BSc: { facultyId: 11, assignedDate: null },
+//   BCA: { facultyId: 17, assignedDate: null }
+// };
+
+// // Default EA Permissions
+// export const DEFAULT_EA_PERMISSIONS = {
+//   subjectApproval: false,
+//   preferenceApproval: false,
+//   courseApproval: false,
+//   timetableGeneration: false,
+//   viewReports: true,
+//   manageFaculty: false,
+//   viewAllData: true
+// };
+
+// // Default Visiting Faculty Permissions
+// export const DEFAULT_VISITING_FACULTY_PERMISSIONS = {
+//   canViewTimetable: true,
+//   canViewSyllabus: true,
+//   canUpdateSyllabus: false,
+//   canViewProfile: true,
+//   canRequestLeave: true,
+//   canViewStudents: false,
+//   canSubmitGrades: false,
+//   canAccessPreferences: false,
+//   canAccessCourseDetails: false,
+//   canRaiseIssues: true,
+//   maxHoursPerWeek: 8
+// };
+
+// export const DEFAULT_SUBJECT_DELETION_REQUESTS = [];
+
+// // Faculty Location Storage Key (used in components)
+// export const FACULTY_LOCATION_STORAGE_KEY = 'acadplan_faculty_location';
+
+// // Storage Keys
+// export const STORAGE_KEYS = {
+//   FACULTY: 'acadplan_faculty',
+//   SUBJECT_PREFERENCES: 'acadplan_subject_preferences',
+//   SUBJECTS: 'acadplan_subjects',
+//   COURSE_DETAILS: 'acadplan_course_details',
+//   TIMETABLE: 'acadplan_timetable',
+//   SYLLABUS_PROGRESS: 'acadplan_syllabus_progress',
+//   SECTIONS: 'acadplan_sections',
+//   ROOMS: 'acadplan_rooms',
+//   TIMETABLE_CONFIG: 'acadplan_timetable_config',
+//   SEMESTER_DETAILS: 'acadplan_semester_details',
+//   FLAGGED_ISSUES: 'acadplan_flagged_issues',
+//   STUDENT_PROGRESS: 'acadplan_student_progress',
+//   DEAN_APPROVALS: 'acadplan_dean_approvals',
+//   LEAVE_REQUESTS: 'acadplan_leave_requests',
+//   CALENDAR_EVENTS: 'acadplan_calendar_events',
+//   FORM_STATUS: 'acadplan_form_status',
+//   PREFERENCE_SETTINGS: 'acadplan_preference_settings',
+//   FACULTY_PREFERENCE_FORM: 'acadplan_faculty_preference_form',
+//   FACULTY_SUBMISSIONS: 'acadplan_faculty_submissions',
+//   CLASS_TEACHERS: 'acadplan_class_teachers',
+//   COURSE_LEADS: 'acadplan_course_leads',
+//   APPOINTMENTS: 'acadplan_appointments',
+//   EA_PERMISSIONS: 'acadplan_ea_permissions',
+//   MOCK_USERS: 'acadplan_mock_users',
+//   VISITING_FACULTY_PERMISSIONS: 'acadplan_visiting_faculty_permissions',
+//   VISITING_FACULTY_SYLLABUS: 'acadplan_visiting_faculty_syllabus',
+//   VISITING_FACULTY_TIMETABLE: 'acadplan_visiting_faculty_timetable',
+//   SUBJECT_DELETION_REQUESTS: 'acadplan_subject_deletion_requests',
+//   FACULTY_LOCATION: 'acadplan_faculty_location'
+// };
+
 // src/data/mockData.js
 
 // Mock Users with passwordChanged flag
@@ -1616,30 +2326,34 @@ export const MOCK_USERS = [
   { id: 8, email: "anita@university.edu", password: "faculty123", role: "faculty", name: "Dr. Anita Roy", avatar: "AR", school: "SoCSE", designation: "Assistant Professor", course: "BTech", passwordChanged: true },
   { id: 9, email: "sanjay@university.edu", password: "faculty123", role: "faculty", name: "Dr. Sanjay Mehta", avatar: "SM", school: "SoCSE", designation: "Assistant Professor", course: "BTech", passwordChanged: true },
   { id: 10, email: "pooja@university.edu", password: "faculty123", role: "faculty", name: "Dr. Pooja Reddy", avatar: "PR", school: "SoCSE", designation: "Assistant Professor", course: "BTech", passwordChanged: true },
-  // BSc Faculty (6 faculty)
+  // BSc Faculty (8 faculty)
   { id: 11, email: "suresh@university.edu", password: "faculty123", role: "faculty", name: "Prof. Suresh Kumar", avatar: "SK", school: "SoCSE", designation: "Professor", course: "BSc", passwordChanged: true },
   { id: 12, email: "deepa@university.edu", password: "faculty123", role: "faculty", name: "Prof. Deepa Nair", avatar: "DN", school: "SoCSE", designation: "Professor", course: "BSc", passwordChanged: true },
   { id: 13, email: "rajesh@university.edu", password: "faculty123", role: "faculty", name: "Dr. Rajesh Kumar", avatar: "RK", school: "SoCSE", designation: "Associate Professor", course: "BSc", passwordChanged: true },
   { id: 14, email: "kavita@university.edu", password: "faculty123", role: "faculty", name: "Dr. Kavita Joshi", avatar: "KJ", school: "SoCSE", designation: "Assistant Professor", course: "BSc", passwordChanged: true },
   { id: 15, email: "manoj@university.edu", password: "faculty123", role: "faculty", name: "Dr. Manoj Tiwari", avatar: "MT", school: "SoCSE", designation: "Assistant Professor", course: "BSc", passwordChanged: true },
   { id: 16, email: "swati@university.edu", password: "faculty123", role: "faculty", name: "Dr. Swati Desai", avatar: "SD", school: "SoCSE", designation: "Assistant Professor", course: "BSc", passwordChanged: true },
-  // BCA Faculty (6 faculty)
+  { id: 23, email: "ramesh@university.edu", password: "faculty123", role: "faculty", name: "Dr. Ramesh Kulkarni", avatar: "RK", school: "SoCSE", designation: "Assistant Professor", course: "BSc", passwordChanged: true },
+  { id: 24, email: "sneha@university.edu", password: "faculty123", role: "faculty", name: "Dr. Sneha Patil", avatar: "SP", school: "SoCSE", designation: "Assistant Professor", course: "BSc", passwordChanged: true },
+  // BCA Faculty (8 faculty)
   { id: 17, email: "alok@university.edu", password: "faculty123", role: "faculty", name: "Dr. Alok Mishra", avatar: "AM", school: "SoCSE", designation: "Professor", course: "BCA", passwordChanged: true },
   { id: 18, email: "rekha@university.edu", password: "faculty123", role: "faculty", name: "Dr. Rekha Verma", avatar: "RV", school: "SoCSE", designation: "Associate Professor", course: "BCA", passwordChanged: true },
   { id: 19, email: "naveen@university.edu", password: "faculty123", role: "faculty", name: "Dr. Naveen Bhatia", avatar: "NB", school: "SoCSE", designation: "Assistant Professor", course: "BCA", passwordChanged: true },
   { id: 20, email: "monica@university.edu", password: "faculty123", role: "faculty", name: "Dr. Monica Sethi", avatar: "MS", school: "SoCSE", designation: "Assistant Professor", course: "BCA", passwordChanged: true },
   { id: 21, email: "tarun@university.edu", password: "faculty123", role: "faculty", name: "Dr. Tarun Kapoor", avatar: "TK", school: "SoCSE", designation: "Assistant Professor", course: "BCA", passwordChanged: true },
   { id: 22, email: "divya@university.edu", password: "faculty123", role: "faculty", name: "Dr. Divya Malhotra", avatar: "DM", school: "SoCSE", designation: "Assistant Professor", course: "BCA", passwordChanged: true },
+  { id: 25, email: "kiran@university.edu", password: "faculty123", role: "faculty", name: "Dr. Kiran Desai", avatar: "KD", school: "SoCSE", designation: "Assistant Professor", course: "BCA", passwordChanged: true },
+  { id: 26, email: "meera@university.edu", password: "faculty123", role: "faculty", name: "Dr. Meera Joshi", avatar: "MJ", school: "SoCSE", designation: "Assistant Professor", course: "BCA", passwordChanged: true },
   // Students
-  { id: 23, email: "student.btech@university.edu", password: "student123", role: "student", name: "Rohan Mehta", avatar: "RM", course: "BTech", semester: 1, section: "A", passwordChanged: true },
-  { id: 24, email: "student.bsc@university.edu", password: "student123", role: "student", name: "Priya Sharma", avatar: "PS", course: "BSc", semester: 1, section: "B", passwordChanged: true },
-  { id: 25, email: "student.bca@university.edu", password: "student123", role: "student", name: "Arjun Kumar", avatar: "AK", course: "BCA", semester: 2, section: "C", passwordChanged: true },
+  { id: 27, email: "student.btech@university.edu", password: "student123", role: "student", name: "Rohan Mehta", avatar: "RM", course: "BTech", semester: 1, section: "A", passwordChanged: true },
+  { id: 28, email: "student.bsc@university.edu", password: "student123", role: "student", name: "Priya Sharma", avatar: "PS", course: "BSc", semester: 1, section: "B", passwordChanged: true },
+  { id: 29, email: "student.bca@university.edu", password: "student123", role: "student", name: "Arjun Kumar", avatar: "AK", course: "BCA", semester: 2, section: "C", passwordChanged: true },
   // Director
-  { id: 26, email: "director@university.edu", password: "director123", role: "director", name: "Prof. Rajesh Menon", avatar: "RM", school: "School of CSE", passwordChanged: true },
+  { id: 30, email: "director@university.edu", password: "director123", role: "director", name: "Prof. Rajesh Menon", avatar: "RM", school: "School of CSE", passwordChanged: true },
   // EA
-  { id: 27, email: "ea@university.edu", password: "ea123", role: "ea", name: "Sarah Johnson", avatar: "SJ", school: "Dean's Office", passwordChanged: true },
+  { id: 31, email: "ea@university.edu", password: "ea123", role: "ea", name: "Sarah Johnson", avatar: "SJ", school: "Dean's Office", passwordChanged: true },
   // Visiting Faculty
-  { id: 28, email: "visiting@university.edu", password: "visiting123", role: "visiting_faculty", name: "Dr. James Wilson", avatar: "JW", school: "SoCSE", designation: "Visiting Professor", course: "BTech", passwordChanged: true },
+  { id: 32, email: "visiting@university.edu", password: "visiting123", role: "visiting_faculty", name: "Dr. James Wilson", avatar: "JW", school: "SoCSE", designation: "Visiting Professor", course: "BTech", passwordChanged: true },
 ];
 
 // Courses, Semesters, Sections
@@ -1658,9 +2372,9 @@ export const WORKLOAD_LIMITS = {
   "Professor": 10,
 };
 
-// Default Faculty Data with Location Fields
+// Default Faculty Data
 export const DEFAULT_FACULTY = [
-  // BTech Faculty (8 faculty - 94 hours total)
+  // BTech Faculty (8 faculty)
   { id: 3, facultyId: "FAC001", name: "Dr. Rahul Krishnan", avatar: "RK", dept: "CSE", designation: "Professor", specialization: "Data Structures, Algorithms", course: "BTech", maxHours: 10, assignedHours: 0, remainingHours: 10, preferences: [], color: "#4361ee", email: "rahul@university.edu", block: "Academic Block A", floor: "3rd Floor", roomNumber: "301", cabinLocation: "A-301" },
   { id: 4, facultyId: "FAC002", name: "Dr. Priya Iyer", avatar: "PI", dept: "CSE", designation: "Professor", specialization: "Machine Learning, AI", course: "BTech", maxHours: 10, assignedHours: 0, remainingHours: 10, preferences: [], color: "#9d4edd", email: "priya@university.edu", block: "Academic Block A", floor: "3rd Floor", roomNumber: "302", cabinLocation: "A-302" },
   { id: 5, facultyId: "FAC003", name: "Dr. Amit Sharma", avatar: "AS", dept: "CSE", designation: "Associate Professor", specialization: "DBMS, OS", course: "BTech", maxHours: 12, assignedHours: 0, remainingHours: 12, preferences: [], color: "#06d6a0", email: "amit@university.edu", block: "Academic Block A", floor: "2nd Floor", roomNumber: "201", cabinLocation: "A-201" },
@@ -1670,83 +2384,79 @@ export const DEFAULT_FACULTY = [
   { id: 9, facultyId: "FAC007", name: "Dr. Sanjay Mehta", avatar: "SM", dept: "CSE", designation: "Assistant Professor", specialization: "Cloud Computing, DevOps", course: "BTech", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#118ab2", email: "sanjay@university.edu", block: "Academic Block B", floor: "2nd Floor", roomNumber: "201", cabinLocation: "B-201" },
   { id: 10, facultyId: "FAC008", name: "Dr. Pooja Reddy", avatar: "PR", dept: "CSE", designation: "Assistant Professor", specialization: "Software Engineering, Testing", course: "BTech", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#ef476f", email: "pooja@university.edu", block: "Academic Block B", floor: "2nd Floor", roomNumber: "202", cabinLocation: "B-202" },
   
-  // BSc Faculty (6 faculty - 74 hours total)
+  // BSc Faculty (8 faculty)
   { id: 11, facultyId: "FAC009", name: "Prof. Suresh Kumar", avatar: "SK", dept: "CSE", designation: "Professor", specialization: "Mathematics, Discrete Structures", course: "BSc", maxHours: 10, assignedHours: 0, remainingHours: 10, preferences: [], color: "#ffb703", email: "suresh@university.edu", block: "Science Block", floor: "2nd Floor", roomNumber: "201", cabinLocation: "S-201" },
   { id: 12, facultyId: "FAC010", name: "Prof. Deepa Nair", avatar: "DN", dept: "CSE", designation: "Professor", specialization: "Programming Fundamentals, C", course: "BSc", maxHours: 10, assignedHours: 0, remainingHours: 10, preferences: [], color: "#6b705c", email: "deepa@university.edu", block: "Science Block", floor: "2nd Floor", roomNumber: "202", cabinLocation: "S-202" },
   { id: 13, facultyId: "FAC011", name: "Dr. Rajesh Kumar", avatar: "RK", dept: "CSE", designation: "Associate Professor", specialization: "Database Systems, SQL", course: "BSc", maxHours: 12, assignedHours: 0, remainingHours: 12, preferences: [], color: "#9d4edd", email: "rajesh@university.edu", block: "Science Block", floor: "1st Floor", roomNumber: "101", cabinLocation: "S-101" },
   { id: 14, facultyId: "FAC012", name: "Dr. Kavita Joshi", avatar: "KJ", dept: "CSE", designation: "Assistant Professor", specialization: "Web Technologies, HTML/CSS", course: "BSc", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#06d6a0", email: "kavita@university.edu", block: "Science Block", floor: "1st Floor", roomNumber: "102", cabinLocation: "S-102" },
   { id: 15, facultyId: "FAC013", name: "Dr. Manoj Tiwari", avatar: "MT", dept: "CSE", designation: "Assistant Professor", specialization: "Data Analysis, Python", course: "BSc", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#e3646b", email: "manoj@university.edu", block: "Science Block", floor: "Ground Floor", roomNumber: "001", cabinLocation: "S-001" },
   { id: 16, facultyId: "FAC014", name: "Dr. Swati Desai", avatar: "SD", dept: "CSE", designation: "Assistant Professor", specialization: "Computer Graphics, Multimedia", course: "BSc", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#118ab2", email: "swati@university.edu", block: "Science Block", floor: "Ground Floor", roomNumber: "002", cabinLocation: "S-002" },
+  { id: 23, facultyId: "FAC021", name: "Dr. Ramesh Kulkarni", avatar: "RK", dept: "CSE", designation: "Assistant Professor", specialization: "Environmental Science, Linux", course: "BSc", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#2ecc71", email: "ramesh@university.edu", block: "Science Block", floor: "3rd Floor", roomNumber: "301", cabinLocation: "S-301" },
+  { id: 24, facultyId: "FAC022", name: "Dr. Sneha Patil", avatar: "SP", dept: "CSE", designation: "Assistant Professor", specialization: "Cloud Computing, Entrepreneurship", course: "BSc", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#e67e22", email: "sneha@university.edu", block: "Science Block", floor: "3rd Floor", roomNumber: "302", cabinLocation: "S-302" },
   
-  // BCA Faculty (6 faculty - 74 hours total)
+  // BCA Faculty (8 faculty)
   { id: 17, facultyId: "FAC015", name: "Dr. Alok Mishra", avatar: "AM", dept: "CSE", designation: "Professor", specialization: "Object Oriented Programming, C++", course: "BCA", maxHours: 10, assignedHours: 0, remainingHours: 10, preferences: [], color: "#4361ee", email: "alok@university.edu", block: "Academic Block C", floor: "2nd Floor", roomNumber: "201", cabinLocation: "C-201" },
   { id: 18, facultyId: "FAC016", name: "Dr. Rekha Verma", avatar: "RV", dept: "CSE", designation: "Associate Professor", specialization: "Data Structures, Algorithms", course: "BCA", maxHours: 12, assignedHours: 0, remainingHours: 12, preferences: [], color: "#ffb703", email: "rekha@university.edu", block: "Academic Block C", floor: "2nd Floor", roomNumber: "202", cabinLocation: "C-202" },
   { id: 19, facultyId: "FAC017", name: "Dr. Naveen Bhatia", avatar: "NB", dept: "CSE", designation: "Assistant Professor", specialization: "Software Engineering, Testing", course: "BCA", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#9d4edd", email: "naveen@university.edu", block: "Academic Block C", floor: "1st Floor", roomNumber: "101", cabinLocation: "C-101" },
   { id: 20, facultyId: "FAC018", name: "Dr. Monica Sethi", avatar: "MS", dept: "CSE", designation: "Assistant Professor", specialization: "Database Management, SQL", course: "BCA", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#06d6a0", email: "monica@university.edu", block: "Academic Block C", floor: "1st Floor", roomNumber: "102", cabinLocation: "C-102" },
   { id: 21, facultyId: "FAC019", name: "Dr. Tarun Kapoor", avatar: "TK", dept: "CSE", designation: "Assistant Professor", specialization: "Internet Technologies, Web Dev", course: "BCA", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#e3646b", email: "tarun@university.edu", block: "Academic Block C", floor: "Ground Floor", roomNumber: "001", cabinLocation: "C-001" },
   { id: 22, facultyId: "FAC020", name: "Dr. Divya Malhotra", avatar: "DM", dept: "CSE", designation: "Assistant Professor", specialization: "Multimedia Systems, Graphics", course: "BCA", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#118ab2", email: "divya@university.edu", block: "Academic Block C", floor: "Ground Floor", roomNumber: "002", cabinLocation: "C-002" },
+  { id: 25, facultyId: "FAC023", name: "Dr. Kiran Desai", avatar: "KD", dept: "CSE", designation: "Assistant Professor", specialization: "E-Commerce, Cyber Security", course: "BCA", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#3498db", email: "kiran@university.edu", block: "Academic Block C", floor: "3rd Floor", roomNumber: "301", cabinLocation: "C-301" },
+  { id: 26, facultyId: "FAC024", name: "Dr. Meera Joshi", avatar: "MJ", dept: "CSE", designation: "Assistant Professor", specialization: "Data Science, Python", course: "BCA", maxHours: 14, assignedHours: 0, remainingHours: 14, preferences: [], color: "#1abc9c", email: "meera@university.edu", block: "Academic Block C", floor: "3rd Floor", roomNumber: "302", cabinLocation: "C-302" },
 ];
 
-// Default Subjects - Balanced for each course
+// src/data/mockData.js - REPLACE the DEFAULT_SUBJECTS section with this:
+
 export const DEFAULT_SUBJECTS = [
-  // ========== BTECH (16 subjects - 8 per semester) ==========
-  // Semester 1 - Core (4), Major (2), Minor (2)
-  { id: "BT101", code: "BT101", name: "Data Structures", dept: "CSE", course: "BTech", semester: 1, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 3, labPeriodsPerWeek: 2, totalWeeklyClasses: 5, approvalStatus: "approved", examType: "SEE", subjectType: "Core" },
-  { id: "BT102", code: "BT102", name: "Algorithms", dept: "CSE", course: "BTech", semester: 1, credits: 4, modules: 5, type: "Theory", theoryClassesPerWeek: 4, labPeriodsPerWeek: 0, totalWeeklyClasses: 4, approvalStatus: "approved", examType: "SEE", subjectType: "Core" },
-  { id: "BT103", code: "BT103", name: "Database Management Systems", dept: "CSE", course: "BTech", semester: 1, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 2, totalWeeklyClasses: 4, approvalStatus: "approved", examType: "SEE", subjectType: "Core" },
-  { id: "BT104", code: "BT104", name: "Object Oriented Programming", dept: "CSE", course: "BTech", semester: 1, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 3, labPeriodsPerWeek: 2, totalWeeklyClasses: 5, approvalStatus: "approved", examType: "Practical", subjectType: "Core" },
-  { id: "BT105", code: "BT105", name: "Advanced Data Structures", dept: "CSE", course: "BTech", semester: 1, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 3, labPeriodsPerWeek: 2, totalWeeklyClasses: 5, approvalStatus: "approved", examType: "SEE", subjectType: "Major" },
-  { id: "BT106", code: "BT106", name: "Machine Learning Basics", dept: "CSE", course: "BTech", semester: 1, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 3, labPeriodsPerWeek: 2, totalWeeklyClasses: 5, approvalStatus: "approved", examType: "Practical", subjectType: "Major" },
-  { id: "BT107", code: "BT107", name: "Discrete Mathematics", dept: "CSE", course: "BTech", semester: 1, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
-  { id: "BT108", code: "BT108", name: "Digital Logic Design", dept: "CSE", course: "BTech", semester: 1, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
+  // ========== BTECH - Semester 1 (8 subjects, ~20 hours total) ==========
+  { id: "BT101", code: "BT101", name: "Data Structures", dept: "CSE", course: "BTech", semester: 1, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "SEE", subjectType: "Core" },
+  { id: "BT102", code: "BT102", name: "Algorithms", dept: "CSE", course: "BTech", semester: 1, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "SEE", subjectType: "Core" },
+  { id: "BT103", code: "BT103", name: "DBMS", dept: "CSE", course: "BTech", semester: 1, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "SEE", subjectType: "Core" },
+  { id: "BT104", code: "BT104", name: "OOP", dept: "CSE", course: "BTech", semester: 1, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "Practical", subjectType: "Core" },
+  { id: "BT105", code: "BT105", name: "Advanced DS", dept: "CSE", course: "BTech", semester: 1, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "SEE", subjectType: "Major" },
+  { id: "BT106", code: "BT106", name: "ML Basics", dept: "CSE", course: "BTech", semester: 1, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "Practical", subjectType: "Major" },
+  { id: "BT107", code: "BT107", name: "Discrete Maths", dept: "CSE", course: "BTech", semester: 1, credits: 2, modules: 3, type: "Theory", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
+  { id: "BT108", code: "BT108", name: "Digital Logic", dept: "CSE", course: "BTech", semester: 1, credits: 2, modules: 3, type: "Theory", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
   
-  // Semester 2 - Core (4), Major (2), Minor (2)
-  { id: "BT201", code: "BT201", name: "Operating Systems", dept: "CSE", course: "BTech", semester: 2, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 2, totalWeeklyClasses: 4, approvalStatus: "approved", examType: "SEE", subjectType: "Core" },
-  { id: "BT202", code: "BT202", name: "Computer Networks", dept: "CSE", course: "BTech", semester: 2, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 2, totalWeeklyClasses: 4, approvalStatus: "approved", examType: "SEE", subjectType: "Core" },
-  { id: "BT203", code: "BT203", name: "Software Engineering", dept: "CSE", course: "BTech", semester: 2, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "Seminar", subjectType: "Core" },
-  { id: "BT204", code: "BT204", name: "Web Development", dept: "CSE", course: "BTech", semester: 2, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 4, totalWeeklyClasses: 6, approvalStatus: "approved", examType: "Practical", subjectType: "Core" },
-  { id: "BT205", code: "BT205", name: "Cloud Computing", dept: "CSE", course: "BTech", semester: 2, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 3, labPeriodsPerWeek: 2, totalWeeklyClasses: 5, approvalStatus: "approved", examType: "SEE", subjectType: "Major" },
-  { id: "BT206", code: "BT206", name: "Artificial Intelligence", dept: "CSE", course: "BTech", semester: 2, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 3, labPeriodsPerWeek: 2, totalWeeklyClasses: 5, approvalStatus: "approved", examType: "Practical", subjectType: "Major" },
-  { id: "BT207", code: "BT207", name: "Cyber Security", dept: "CSE", course: "BTech", semester: 2, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
-  { id: "BT208", code: "BT208", name: "Mobile App Development", dept: "CSE", course: "BTech", semester: 2, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 4, totalWeeklyClasses: 6, approvalStatus: "approved", examType: "Practical", subjectType: "Minor" },
+  // BTech Semester 2
+  { id: "BT201", code: "BT201", name: "Operating Systems", dept: "CSE", course: "BTech", semester: 2, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "SEE", subjectType: "Core" },
+  { id: "BT202", code: "BT202", name: "Computer Networks", dept: "CSE", course: "BTech", semester: 2, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "SEE", subjectType: "Core" },
+  { id: "BT203", code: "BT203", name: "Software Engg", dept: "CSE", course: "BTech", semester: 2, credits: 2, modules: 3, type: "Theory", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "Seminar", subjectType: "Core" },
+  { id: "BT204", code: "BT204", name: "Web Dev", dept: "CSE", course: "BTech", semester: 2, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 1, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "Practical", subjectType: "Core" },
+  { id: "BT205", code: "BT205", name: "Cloud Comp", dept: "CSE", course: "BTech", semester: 2, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "SEE", subjectType: "Major" },
+  { id: "BT206", code: "BT206", name: "AI", dept: "CSE", course: "BTech", semester: 2, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "Practical", subjectType: "Major" },
+  { id: "BT207", code: "BT207", name: "Cyber Security", dept: "CSE", course: "BTech", semester: 2, credits: 2, modules: 3, type: "Theory", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
+  { id: "BT208", code: "BT208", name: "Mobile App", dept: "CSE", course: "BTech", semester: 2, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 2, totalWeeklyClasses: 4, approvalStatus: "approved", examType: "Practical", subjectType: "Minor" },
 
-  // ========== BSC (14 subjects - 7 per semester) ==========
-  // Semester 1 - Core (3), Major (2), Minor (2)
-  { id: "BS101", code: "BS101", name: "Mathematics I", dept: "CSE", course: "BSc", semester: 1, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Core" },
-  { id: "BS102", code: "BS102", name: "Programming Fundamentals", dept: "CSE", course: "BSc", semester: 1, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 3, labPeriodsPerWeek: 2, totalWeeklyClasses: 5, approvalStatus: "approved", examType: "Practical", subjectType: "Core" },
-  { id: "BS103", code: "BS103", name: "Digital Electronics", dept: "CSE", course: "BSc", semester: 1, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Core" },
-  { id: "BS104", code: "BS104", name: "C Programming", dept: "CSE", course: "BSc", semester: 1, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 4, totalWeeklyClasses: 6, approvalStatus: "approved", examType: "Practical", subjectType: "Major" },
-  { id: "BS105", code: "BS105", name: "Discrete Mathematics", dept: "CSE", course: "BSc", semester: 1, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Major" },
-  { id: "BS106", code: "BS106", name: "Computer Organization", dept: "CSE", course: "BSc", semester: 1, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
-  { id: "BS107", code: "BS107", name: "Office Automation", dept: "CSE", course: "BSc", semester: 1, credits: 2, modules: 3, type: "Theory", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
+  // ========== BSC - Semester 1 (6 subjects, ~12 hours total) ==========
+  { id: "BS101", code: "BS101", name: "Mathematics I", dept: "CSE", course: "BSc", semester: 1, credits: 2, modules: 3, type: "Theory", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "SEE", subjectType: "Core" },
+  { id: "BS102", code: "BS102", name: "Programming", dept: "CSE", course: "BSc", semester: 1, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "Practical", subjectType: "Core" },
+  { id: "BS103", code: "BS103", name: "Discrete Maths", dept: "CSE", course: "BSc", semester: 1, credits: 2, modules: 3, type: "Theory", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "SEE", subjectType: "Major" },
+  { id: "BS104", code: "BS104", name: "C Programming", dept: "CSE", course: "BSc", semester: 1, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 1, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "Practical", subjectType: "Major" },
+  { id: "BS105", code: "BS105", name: "Digital Elec", dept: "CSE", course: "BSc", semester: 1, credits: 2, modules: 3, type: "Theory", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
+  { id: "BS106", code: "BS106", name: "Office Auto", dept: "CSE", course: "BSc", semester: 1, credits: 2, modules: 3, type: "Theory", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
   
-  // Semester 2 - Core (3), Major (2), Minor (2)
-  { id: "BS201", code: "BS201", name: "Data Analysis", dept: "CSE", course: "BSc", semester: 2, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 2, totalWeeklyClasses: 4, approvalStatus: "approved", examType: "Practical", subjectType: "Core" },
-  { id: "BS202", code: "BS202", name: "Web Technologies", dept: "CSE", course: "BSc", semester: 2, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 3, labPeriodsPerWeek: 2, totalWeeklyClasses: 5, approvalStatus: "approved", examType: "Practical", subjectType: "Core" },
-  { id: "BS203", code: "BS203", name: "Database Systems", dept: "CSE", course: "BSc", semester: 2, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 2, totalWeeklyClasses: 4, approvalStatus: "approved", examType: "SEE", subjectType: "Core" },
-  { id: "BS204", code: "BS204", name: "Python Programming", dept: "CSE", course: "BSc", semester: 2, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 4, totalWeeklyClasses: 6, approvalStatus: "approved", examType: "Practical", subjectType: "Major" },
-  { id: "BS205", code: "BS205", name: "Computer Graphics", dept: "CSE", course: "BSc", semester: 2, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Major" },
-  { id: "BS206", code: "BS206", name: "Internet of Things", dept: "CSE", course: "BSc", semester: 2, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
-  { id: "BS207", code: "BS207", name: "Multimedia Systems", dept: "CSE", course: "BSc", semester: 2, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
+  // BSC Semester 2
+  { id: "BS201", code: "BS201", name: "Data Analysis", dept: "CSE", course: "BSc", semester: 2, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "Practical", subjectType: "Core" },
+  { id: "BS202", code: "BS202", name: "Web Tech", dept: "CSE", course: "BSc", semester: 2, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "Practical", subjectType: "Core" },
+  { id: "BS203", code: "BS203", name: "DBMS", dept: "CSE", course: "BSc", semester: 2, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "SEE", subjectType: "Major" },
+  { id: "BS204", code: "BS204", name: "Python", dept: "CSE", course: "BSc", semester: 2, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 1, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "Practical", subjectType: "Major" },
+  { id: "BS205", code: "BS205", name: "Graphics", dept: "CSE", course: "BSc", semester: 2, credits: 2, modules: 3, type: "Theory", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
+  { id: "BS206", code: "BS206", name: "Multimedia", dept: "CSE", course: "BSc", semester: 2, credits: 2, modules: 3, type: "Theory", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
 
-  // ========== BCA (14 subjects - 7 per semester) ==========
-  // Semester 1 - Core (3), Major (2), Minor (2)
-  { id: "BC101", code: "BC101", name: "Introduction to Programming", dept: "CSE", course: "BCA", semester: 1, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 2, totalWeeklyClasses: 4, approvalStatus: "approved", examType: "Practical", subjectType: "Core" },
-  { id: "BC102", code: "BC102", name: "Computer Fundamentals", dept: "CSE", course: "BCA", semester: 1, credits: 2, modules: 3, type: "Theory", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "SEE", subjectType: "Core" },
-  { id: "BC103", code: "BC103", name: "Mathematics for Computing", dept: "CSE", course: "BCA", semester: 1, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Core" },
-  { id: "BC104", code: "BC104", name: "C Programming Lab", dept: "CSE", course: "BCA", semester: 1, credits: 2, modules: 3, type: "Lab", theoryClassesPerWeek: 0, labPeriodsPerWeek: 4, totalWeeklyClasses: 4, approvalStatus: "approved", examType: "Practical", subjectType: "Major" },
-  { id: "BC105", code: "BC105", name: "Digital Logic", dept: "CSE", course: "BCA", semester: 1, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Major" },
-  { id: "BC106", code: "BC106", name: "Office Automation Tools", dept: "CSE", course: "BCA", semester: 1, credits: 2, modules: 3, type: "Theory", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
-  { id: "BC107", code: "BC107", name: "Communication Skills", dept: "CSE", course: "BCA", semester: 1, credits: 2, modules: 3, type: "Theory", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "Seminar", subjectType: "Minor" },
+  // ========== BCA - Semester 1 (5 subjects, ~10 hours total) ==========
+  { id: "BC101", code: "BC101", name: "Intro to Prog", dept: "CSE", course: "BCA", semester: 1, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "Practical", subjectType: "Core" },
+  { id: "BC102", code: "BC102", name: "Comp Fundamentals", dept: "CSE", course: "BCA", semester: 1, credits: 2, modules: 3, type: "Theory", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "SEE", subjectType: "Core" },
+  { id: "BC103", code: "BC103", name: "Maths", dept: "CSE", course: "BCA", semester: 1, credits: 2, modules: 3, type: "Theory", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "SEE", subjectType: "Major" },
+  { id: "BC104", code: "BC104", name: "C Lab", dept: "CSE", course: "BCA", semester: 1, credits: 2, modules: 3, type: "Lab", theoryClassesPerWeek: 0, labPeriodsPerWeek: 2, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "Practical", subjectType: "Major" },
+  { id: "BC105", code: "BC105", name: "Digital Logic", dept: "CSE", course: "BCA", semester: 1, credits: 2, modules: 3, type: "Theory", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
   
-  // Semester 2 - Core (3), Major (2), Minor (2)
-  { id: "BC201", code: "BC201", name: "Object Oriented Programming", dept: "CSE", course: "BCA", semester: 2, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 3, labPeriodsPerWeek: 2, totalWeeklyClasses: 5, approvalStatus: "approved", examType: "Practical", subjectType: "Core" },
-  { id: "BC202", code: "BC202", name: "Data Structures using C++", dept: "CSE", course: "BCA", semester: 2, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 3, labPeriodsPerWeek: 2, totalWeeklyClasses: 5, approvalStatus: "approved", examType: "Practical", subjectType: "Core" },
-  { id: "BC203", code: "BC203", name: "Software Engineering", dept: "CSE", course: "BCA", semester: 2, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "Seminar", subjectType: "Core" },
-  { id: "BC204", code: "BC204", name: "Database Management Systems", dept: "CSE", course: "BCA", semester: 2, credits: 4, modules: 5, type: "Both", theoryClassesPerWeek: 3, labPeriodsPerWeek: 2, totalWeeklyClasses: 5, approvalStatus: "approved", examType: "SEE", subjectType: "Major" },
-  { id: "BC205", code: "BC205", name: "Internet Technologies", dept: "CSE", course: "BCA", semester: 2, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Major" },
-  { id: "BC206", code: "BC206", name: "Multimedia Systems", dept: "CSE", course: "BCA", semester: 2, credits: 3, modules: 4, type: "Theory", theoryClassesPerWeek: 3, labPeriodsPerWeek: 0, totalWeeklyClasses: 3, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
-  { id: "BC207", code: "BC207", name: "Web Design Lab", dept: "CSE", course: "BCA", semester: 2, credits: 2, modules: 3, type: "Lab", theoryClassesPerWeek: 0, labPeriodsPerWeek: 4, totalWeeklyClasses: 4, approvalStatus: "approved", examType: "Practical", subjectType: "Minor" },
+  // BCA Semester 2
+  { id: "BC201", code: "BC201", name: "OOP", dept: "CSE", course: "BCA", semester: 2, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "Practical", subjectType: "Core" },
+  { id: "BC202", code: "BC202", name: "Data Struc", dept: "CSE", course: "BCA", semester: 2, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "Practical", subjectType: "Core" },
+  { id: "BC203", code: "BC203", name: "DBMS", dept: "CSE", course: "BCA", semester: 2, credits: 3, modules: 4, type: "Both", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "SEE", subjectType: "Major" },
+  { id: "BC204", code: "BC204", name: "Web Lab", dept: "CSE", course: "BCA", semester: 2, credits: 2, modules: 3, type: "Lab", theoryClassesPerWeek: 0, labPeriodsPerWeek: 2, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "Practical", subjectType: "Major" },
+  { id: "BC205", code: "BC205", name: "Multimedia", dept: "CSE", course: "BCA", semester: 2, credits: 2, modules: 3, type: "Theory", theoryClassesPerWeek: 2, labPeriodsPerWeek: 0, totalWeeklyClasses: 2, approvalStatus: "approved", examType: "SEE", subjectType: "Minor" },
 ];
 
 // Default Subject Preferences
@@ -1771,9 +2481,13 @@ export const DEFAULT_SUBJECT_PREFERENCES = [
   { id: 18, facultyId: 20, facultyName: "Dr. Monica Sethi", avatar: "MS", status: "pending", submitted: false, feedback: "", preferences: [] },
   { id: 19, facultyId: 21, facultyName: "Dr. Tarun Kapoor", avatar: "TK", status: "pending", submitted: false, feedback: "", preferences: [] },
   { id: 20, facultyId: 22, facultyName: "Dr. Divya Malhotra", avatar: "DM", status: "pending", submitted: false, feedback: "", preferences: [] },
+  { id: 21, facultyId: 23, facultyName: "Dr. Ramesh Kulkarni", avatar: "RK", status: "pending", submitted: false, feedback: "", preferences: [] },
+  { id: 22, facultyId: 24, facultyName: "Dr. Sneha Patil", avatar: "SP", status: "pending", submitted: false, feedback: "", preferences: [] },
+  { id: 23, facultyId: 25, facultyName: "Dr. Kiran Desai", avatar: "KD", status: "pending", submitted: false, feedback: "", preferences: [] },
+  { id: 24, facultyId: 26, facultyName: "Dr. Meera Joshi", avatar: "MJ", status: "pending", submitted: false, feedback: "", preferences: [] },
 ];
 
-// Default Rooms (increased)
+// Default Rooms
 export const DEFAULT_ROOMS = [
   { id: "R001", name: "Hall 201", type: "Theory", capacity: 60 },
   { id: "R002", name: "Hall 202", type: "Theory", capacity: 60 },
@@ -1787,8 +2501,6 @@ export const DEFAULT_ROOMS = [
   { id: "R010", name: "Lab 2", type: "Lab", capacity: 30 },
   { id: "R011", name: "Lab 3", type: "Lab", capacity: 30 },
   { id: "R012", name: "Lab 4", type: "Lab", capacity: 30 },
-  { id: "R013", name: "Lab 5", type: "Lab", capacity: 30 },
-  { id: "R014", name: "Lab 6", type: "Lab", capacity: 30 },
 ];
 
 // Default Timetable Configuration
@@ -1801,7 +2513,7 @@ export const DEFAULT_TIMETABLE_CONFIG = {
   days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
 };
 
-// Default Semester Details - Updated with balanced subjects
+// Default Semester Details - Updated with optimized subjects
 export const DEFAULT_SEMESTER_DETAILS = {
   BTech: {
     1: {
@@ -1819,29 +2531,29 @@ export const DEFAULT_SEMESTER_DETAILS = {
   },
   BSc: {
     1: {
-      subjects: ["BS101", "BS102", "BS103", "BS104", "BS105", "BS106", "BS107"],
+      subjects: ["BS101", "BS102", "BS103", "BS104", "BS105", "BS106"],
       defaultFaculty: {
-        "BS101": 11, "BS102": 12, "BS103": 13, "BS104": 14, "BS105": 15, "BS106": 16, "BS107": 11
+        "BS101": 11, "BS102": 12, "BS103": 13, "BS104": 14, "BS105": 15, "BS106": 16
       }
     },
     2: {
-      subjects: ["BS201", "BS202", "BS203", "BS204", "BS205", "BS206", "BS207"],
+      subjects: ["BS201", "BS202", "BS203", "BS204", "BS205", "BS206"],
       defaultFaculty: {
-        "BS201": 12, "BS202": 13, "BS203": 14, "BS204": 15, "BS205": 16, "BS206": 11, "BS207": 12
+        "BS201": 12, "BS202": 13, "BS203": 14, "BS204": 15, "BS205": 16, "BS206": 11
       }
     }
   },
   BCA: {
     1: {
-      subjects: ["BC101", "BC102", "BC103", "BC104", "BC105", "BC106", "BC107"],
+      subjects: ["BC101", "BC102", "BC103", "BC104", "BC105"],
       defaultFaculty: {
-        "BC101": 17, "BC102": 18, "BC103": 19, "BC104": 20, "BC105": 21, "BC106": 22, "BC107": 17
+        "BC101": 17, "BC102": 18, "BC103": 19, "BC104": 20, "BC105": 21
       }
     },
     2: {
-      subjects: ["BC201", "BC202", "BC203", "BC204", "BC205", "BC206", "BC207"],
+      subjects: ["BC201", "BC202", "BC203", "BC204", "BC205"],
       defaultFaculty: {
-        "BC201": 18, "BC202": 19, "BC203": 20, "BC204": 21, "BC205": 22, "BC206": 17, "BC207": 18
+        "BC201": 18, "BC202": 19, "BC203": 20, "BC204": 21, "BC205": 22
       }
     }
   }
@@ -1906,7 +2618,6 @@ export const DEFAULT_VISITING_FACULTY_PERMISSIONS = {
 
 export const DEFAULT_SUBJECT_DELETION_REQUESTS = [];
 
-// Faculty Location Storage Key (used in components)
 export const FACULTY_LOCATION_STORAGE_KEY = 'acadplan_faculty_location';
 
 // Storage Keys

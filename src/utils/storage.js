@@ -28,6 +28,9 @@ export const STORAGE_KEYS = {
   VISITING_FACULTY_LIST: 'acadplan_visiting_faculty_list',
   FACULTY_LOCATION: 'acadplan_faculty_location',
   STUDENT_USN: 'acadplan_student_usn',
+  DEPARTMENT_TIMETABLE_STATUS: 'acadplan_dept_timetable_status',
+  ACTIVE_DEPARTMENT: 'acadplan_active_department',
+  CURRENT_GENERATING_DEPT: 'acadplan_current_generating_dept',
 };
 
 export const loadFromStorage = (key, defaultValue) => {

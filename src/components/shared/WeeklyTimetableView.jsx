@@ -1,3 +1,558 @@
+// // // src/components/shared/WeeklyTimetableView.jsx
+// // import { Card, Title } from "../common";
+// // import { AppState } from "../../AppState";
+// // import { generateTimeSlots } from "../../utils/timetableUtils";
+// // import { C } from "../../styles/theme";
+
+// // export function WeeklyTimetableView({ schedule, title }) {
+// //   const config = AppState.timetableConfig;
+// //   const timeSlots = generateTimeSlots(config);
+// //   // Keep ALL time slots including lunch
+// //   const allTimeSlots = timeSlots;
+  
+// //   const getSlotContent = (day, time) => {
+// //     const slots = schedule.filter(s => s.day === day && s.time === time);
+// //     return slots;
+// //   };
+  
+// //   // Check if a time slot is lunch break
+// //   const isLunchSlot = (slot) => {
+// //     return slot.isLunch === true;
+// //   };
+  
+// //   return (
+// //     <Card>
+// //       <Title level={4}>{title}</Title>
+      
+// //       <div style={{ overflowX: "auto", marginTop: 20 }}>
+// //         <table style={{ width: "100%", borderCollapse: "collapse", minWidth: 800 }}>
+// //           <thead>
+// //             <tr>
+// //               <th style={{ padding: "12px", textAlign: "left", color: C.text.primary, borderBottom: `2px solid ${C.border}` }}>Day / Time</th>
+// //               {allTimeSlots.map(slot => (
+// //                 <th key={slot.time} style={{ 
+// //                   padding: "12px", 
+// //                   textAlign: "center", 
+// //                   color: C.text.primary, 
+// //                   borderBottom: `2px solid ${C.border}`,
+// //                   backgroundColor: slot.isLunch ? C.accent.goldBg : "transparent"
+// //                 }}>
+// //                   {slot.isLunch ? (
+// //                     <>
+// //                       <div style={{ fontWeight: 600, color: C.accent.gold }}>🍽️ LUNCH</div>
+// //                       <div style={{ fontSize: 11, color: C.text.tertiary }}>{slot.time} - {slot.endTime}</div>
+// //                     </>
+// //                   ) : (
+// //                     <>
+// //                       <div style={{ fontWeight: 600 }}>{slot.period}</div>
+// //                       <div style={{ fontSize: 11, color: C.text.tertiary }}>{slot.time} - {slot.endTime}</div>
+// //                     </>
+// //                   )}
+// //                 </th>
+// //               ))}
+// //             </tr>
+// //           </thead>
+// //           <tbody>
+// //             {config.days.map(day => (
+// //               <tr key={day}>
+// //                 <td style={{ padding: "12px", color: C.text.primary, fontWeight: 600, borderBottom: `1px solid ${C.border}`, backgroundColor: C.cardHover }}>
+// //                   {day}
+// //                 </td>
+// //                 {allTimeSlots.map(slot => {
+// //                   if (isLunchSlot(slot)) {
+// //                     // Render lunch break cell
+// //                     return (
+// //                       <td 
+// //                         key={`${day}-${slot.time}`} 
+// //                         style={{ 
+// //                           padding: "12px", 
+// //                           borderBottom: `1px solid ${C.border}`, 
+// //                           verticalAlign: "middle",
+// //                           textAlign: "center",
+// //                           backgroundColor: C.accent.goldBg
+// //                         }}
+// //                       >
+// //                         <div style={{ 
+// //                           color: C.accent.gold, 
+// //                           fontWeight: 600,
+// //                           fontSize: 14,
+// //                           display: "flex",
+// //                           alignItems: "center",
+// //                           justifyContent: "center",
+// //                           gap: 8,
+// //                           flexDirection: "column"
+// //                         }}>
+// //                           <span style={{ fontSize: 24 }}>🍽️</span>
+// //                           <span>Lunch Break</span>
+// //                           <span style={{ fontSize: 11, fontWeight: "normal" }}>{slot.time} - {slot.endTime}</span>
+// //                         </div>
+// //                       </td>
+// //                     );
+// //                   }
+                  
+// //                   const slots = getSlotContent(day, slot.time);
+// //                   return (
+// //                     <td key={`${day}-${slot.time}`} style={{ padding: "6px", borderBottom: `1px solid ${C.border}`, verticalAlign: "top" }}>
+// //                       {slots.length > 0 ? (
+// //                         slots.map(s => (
+// //                           <div
+// //                             key={s.id}
+// //                             style={{
+// //                               background: `${s.color}10`,
+// //                               border: `1px solid ${s.color}30`,
+// //                               borderRadius: 8,
+// //                               padding: "8px",
+// //                               marginBottom: slots.length > 1 ? 4 : 0,
+// //                             }}
+// //                           >
+// //                             <div style={{ fontWeight: 600, fontSize: 12, color: C.text.primary }}>{s.subject}</div>
+// //                             <div style={{ fontSize: 10, color: C.text.secondary }}>{s.facultyName}</div>
+// //                             <div style={{ fontSize: 10, color: s.type === "lab" ? C.accent.green : C.accent.blue }}>{s.room}</div>
+// //                           </div>
+// //                         ))
+// //                       ) : (
+// //                         <div style={{ 
+// //                           height: "100%", 
+// //                           minHeight: 60, 
+// //                           display: "flex", 
+// //                           alignItems: "center", 
+// //                           justifyContent: "center",
+// //                           color: C.text.tertiary,
+// //                           fontSize: 12
+// //                         }}>
+// //                           —
+// //                         </div>
+// //                       )}
+// //                     </td>
+// //                   );
+// //                 })}
+// //               </tr>
+// //             ))}
+// //           </tbody>
+// //         </table>
+// //       </div>
+// //     </Card>
+// //   );
+// // }
+
+// // src/components/shared/WeeklyTimetableView.jsx
+// import { Card, Title } from "../common";
+// import { AppState } from "../../AppState";
+// import { generateTimeSlots } from "../../utils/timetableUtils";
+// import { C } from "../../styles/theme";
+
+// export function WeeklyTimetableView({ schedule, title }) {
+//   const config = AppState.timetableConfig;
+//   const timeSlots = generateTimeSlots(config);
+//   // Keep ALL time slots including lunch and breaks
+//   const allTimeSlots = timeSlots;
+  
+//   const getSlotContent = (day, timeSlot) => {
+//     // Match by day and time start (e.g., "09:00")
+//     const slots = schedule.filter(s => s.day === day && s.timeStart === timeSlot.time);
+//     return slots;
+//   };
+  
+//   // Check if a time slot is lunch break
+//   const isLunchSlot = (slot) => {
+//     return slot.isLunch === true;
+//   };
+  
+//   // Check if a time slot is a break
+//   const isBreakSlot = (slot) => {
+//     return slot.isBreak === true;
+//   };
+  
+//   return (
+//     <Card>
+//       <Title level={4}>{title}</Title>
+      
+//       <div style={{ overflowX: "auto", marginTop: 20 }}>
+//         <table style={{ width: "100%", borderCollapse: "collapse", minWidth: 800 }}>
+//           <thead>
+//             <tr>
+//               <th style={{ padding: "12px", textAlign: "left", color: C.text.primary, borderBottom: `2px solid ${C.border}`, backgroundColor: C.surface }}>
+//                 Day / Time
+//               </th>
+//               {allTimeSlots.map((slot, idx) => {
+//                 let bgColor = "transparent";
+//                 let textColor = C.text.primary;
+                
+//                 if (slot.isLunch) {
+//                   bgColor = C.accent.goldBg;
+//                   textColor = C.accent.gold;
+//                 } else if (slot.isBreak) {
+//                   bgColor = C.accent.blueBg;
+//                   textColor = C.accent.blue;
+//                 }
+                
+//                 return (
+//                   <th key={idx} style={{ 
+//                     padding: "12px", 
+//                     textAlign: "center", 
+//                     color: textColor, 
+//                     borderBottom: `2px solid ${C.border}`,
+//                     backgroundColor: bgColor,
+//                     minWidth: 100
+//                   }}>
+//                     {slot.isLunch ? (
+//                       <>
+//                         <div style={{ fontWeight: 600 }}>🍽️ LUNCH</div>
+//                         <div style={{ fontSize: 11, color: C.text.tertiary }}>{slot.fullTimeRange || `${slot.time} - ${slot.endTime}`}</div>
+//                       </>
+//                     ) : slot.isBreak ? (
+//                       <>
+//                         <div style={{ fontWeight: 600 }}>☕ BREAK</div>
+//                         <div style={{ fontSize: 11, color: C.text.tertiary }}>{slot.fullTimeRange || `${slot.time} - ${slot.endTime}`}</div>
+//                       </>
+//                     ) : (
+//                       <>
+//                         <div style={{ fontWeight: 600 }}>{slot.period}</div>
+//                         <div style={{ fontSize: 11, color: C.text.tertiary }}>{slot.fullTimeRange || `${slot.time} - ${slot.endTime}`}</div>
+//                       </>
+//                     )}
+//                   </th>
+//                 );
+//               })}
+//             </tr>
+//           </thead>
+//           <tbody>
+//             {config.days.map(day => (
+//               <tr key={day}>
+//                 <td style={{ 
+//                   padding: "12px", 
+//                   color: C.text.primary, 
+//                   fontWeight: 600, 
+//                   borderBottom: `1px solid ${C.border}`, 
+//                   backgroundColor: C.cardHover,
+//                   position: "sticky",
+//                   left: 0,
+//                   zIndex: 1
+//                 }}>
+//                   {day}
+//                 </td>
+//                 {allTimeSlots.map((slot, idx) => {
+//                   if (isLunchSlot(slot)) {
+//                     return (
+//                       <td 
+//                         key={`${day}-${idx}`} 
+//                         style={{ 
+//                           padding: "12px", 
+//                           borderBottom: `1px solid ${C.border}`, 
+//                           verticalAlign: "middle",
+//                           textAlign: "center",
+//                           backgroundColor: C.accent.goldBg
+//                         }}
+//                       >
+//                         <div style={{ 
+//                           color: C.accent.gold, 
+//                           fontWeight: 600,
+//                           fontSize: 14,
+//                           display: "flex",
+//                           alignItems: "center",
+//                           justifyContent: "center",
+//                           gap: 8,
+//                           flexDirection: "column"
+//                         }}>
+//                           <span style={{ fontSize: 24 }}>🍽️</span>
+//                           <span>Lunch Break</span>
+//                           <span style={{ fontSize: 11, fontWeight: "normal" }}>{slot.fullTimeRange || `${slot.time} - ${slot.endTime}`}</span>
+//                         </div>
+//                       </td>
+//                     );
+//                   }
+                  
+//                   if (isBreakSlot(slot)) {
+//                     return (
+//                       <td 
+//                         key={`${day}-${idx}`} 
+//                         style={{ 
+//                           padding: "12px", 
+//                           borderBottom: `1px solid ${C.border}`, 
+//                           verticalAlign: "middle",
+//                           textAlign: "center",
+//                           backgroundColor: C.accent.blueBg
+//                         }}
+//                       >
+//                         <div style={{ 
+//                           color: C.accent.blue, 
+//                           fontWeight: 600,
+//                           fontSize: 14,
+//                           display: "flex",
+//                           alignItems: "center",
+//                           justifyContent: "center",
+//                           gap: 8,
+//                           flexDirection: "column"
+//                         }}>
+//                           <span style={{ fontSize: 20 }}>☕</span>
+//                           <span>Short Break</span>
+//                           <span style={{ fontSize: 11, fontWeight: "normal" }}>{slot.fullTimeRange || `${slot.time} - ${slot.endTime}`}</span>
+//                         </div>
+//                       </td>
+//                     );
+//                   }
+                  
+//                   const slots = getSlotContent(day, slot);
+                  
+//                   return (
+//                     <td key={`${day}-${idx}`} style={{ 
+//                       padding: "6px", 
+//                       borderBottom: `1px solid ${C.border}`, 
+//                       verticalAlign: "top",
+//                       backgroundColor: slots.length > 0 ? `${slots[0]?.color}10` : "transparent"
+//                     }}>
+//                       {slots.length > 0 ? (
+//                         slots.map(s => (
+//                           <div
+//                             key={s.id}
+//                             style={{
+//                               background: `${s.color}20`,
+//                               borderLeft: `3px solid ${s.color}`,
+//                               borderRadius: 4,
+//                               padding: "8px",
+//                               marginBottom: slots.length > 1 ? 4 : 0,
+//                             }}
+//                           >
+//                             <div style={{ fontWeight: 600, fontSize: 12, color: C.text.primary }}>{s.subject}</div>
+//                             <div style={{ fontSize: 10, color: C.text.secondary }}>{s.facultyName}</div>
+//                             <div style={{ fontSize: 10, color: s.type === "lab" ? C.accent.green : C.accent.blue }}>{s.room} - Sec {s.section}</div>
+//                           </div>
+//                         ))
+//                       ) : (
+//                         <div style={{ 
+//                           height: "100%", 
+//                           minHeight: 60, 
+//                           display: "flex", 
+//                           alignItems: "center", 
+//                           justifyContent: "center",
+//                           color: C.text.tertiary,
+//                           fontSize: 12
+//                         }}>
+//                           —
+//                         </div>
+//                       )}
+//                     </td>
+//                   );
+//                 })}
+//               </tr>
+//             ))}
+//           </tbody>
+//         </table>
+//       </div>
+//     </Card>
+//   );
+// }
+// // src/components/shared/WeeklyTimetableView.jsx
+// import { Card, Title } from "../common";
+// import { AppState } from "../../AppState";
+// import { generateTimeSlots } from "../../utils/timetableUtils";
+// import { C } from "../../styles/theme";
+
+// export function WeeklyTimetableView({ schedule, title }) {
+//   const config = AppState.timetableConfig;
+//   const timeSlots = generateTimeSlots(config);
+//   const allTimeSlots = timeSlots;
+  
+//   const getSlotContent = (day, timeSlot) => {
+//     const slots = schedule.filter(s => s.day === day && s.timeStart === timeSlot.time);
+//     return slots;
+//   };
+  
+//   const isLunchSlot = (slot) => slot.isLunch === true;
+//   const isBreakSlot = (slot) => slot.isBreak === true;
+  
+//   return (
+//     <Card>
+//       <Title level={4}>{title}</Title>
+      
+//       {/* CONFLICTS SECTION - COMMENTED OUT TO HIDE */}
+//       {/* {conflicts && conflicts.length > 0 && (
+//         <div style={{ background: C.accent.redBg, padding: 12, borderRadius: 8, marginBottom: 16 }}>
+//           <h4 style={{ color: C.accent.red, margin: 0 }}>⚠ {conflicts.length} Conflicts Detected</h4>
+//           <div style={{ maxHeight: 200, overflowY: "auto", marginTop: 8 }}>
+//             {conflicts.slice(0, 10).map((conflict, idx) => (
+//               <p key={idx} style={{ fontSize: 12, margin: 4, color: C.text.secondary }}>{conflict.message}</p>
+//             ))}
+//           </div>
+//         </div>
+//       )} */}
+      
+//       <div style={{ overflowX: "auto", marginTop: 20 }}>
+//         <table style={{ width: "100%", borderCollapse: "collapse", minWidth: 800 }}>
+//           <thead>
+//             <tr>
+//               <th style={{ padding: "12px", textAlign: "left", color: C.text.primary, borderBottom: `2px solid ${C.border}`, backgroundColor: C.surface }}>
+//                 Day / Time
+//               </th>
+//               {allTimeSlots.map((slot, idx) => {
+//                 let bgColor = "transparent";
+//                 let textColor = C.text.primary;
+                
+//                 if (slot.isLunch) {
+//                   bgColor = C.accent.goldBg;
+//                   textColor = C.accent.gold;
+//                 } else if (slot.isBreak) {
+//                   bgColor = C.accent.blueBg;
+//                   textColor = C.accent.blue;
+//                 }
+                
+//                 return (
+//                   <th key={idx} style={{ 
+//                     padding: "12px", 
+//                     textAlign: "center", 
+//                     color: textColor, 
+//                     borderBottom: `2px solid ${C.border}`,
+//                     backgroundColor: bgColor,
+//                     minWidth: 100
+//                   }}>
+//                     {slot.isLunch ? (
+//                       <>
+//                         <div style={{ fontWeight: 600 }}>🍽️ LUNCH</div>
+//                         <div style={{ fontSize: 11, color: C.text.tertiary }}>{slot.fullTimeRange || `${slot.time} - ${slot.endTime}`}</div>
+//                       </>
+//                     ) : slot.isBreak ? (
+//                       <>
+//                         <div style={{ fontWeight: 600 }}>☕ BREAK</div>
+//                         <div style={{ fontSize: 11, color: C.text.tertiary }}>{slot.fullTimeRange || `${slot.time} - ${slot.endTime}`}</div>
+//                       </>
+//                     ) : (
+//                       <>
+//                         <div style={{ fontWeight: 600 }}>{slot.period}</div>
+//                         <div style={{ fontSize: 11, color: C.text.tertiary }}>{slot.fullTimeRange || `${slot.time} - ${slot.endTime}`}</div>
+//                       </>
+//                     )}
+//                   </th>
+//                 );
+//               })}
+//             </tr>
+//           </thead>
+//           <tbody>
+//             {config.days.map(day => (
+//               <tr key={day}>
+//                 <td style={{ 
+//                   padding: "12px", 
+//                   color: C.text.primary, 
+//                   fontWeight: 600, 
+//                   borderBottom: `1px solid ${C.border}`, 
+//                   backgroundColor: C.cardHover,
+//                   position: "sticky",
+//                   left: 0,
+//                   zIndex: 1
+//                 }}>
+//                   {day}
+//                 </td>
+//                 {allTimeSlots.map((slot, idx) => {
+//                   if (isLunchSlot(slot)) {
+//                     return (
+//                       <td 
+//                         key={`${day}-${idx}`} 
+//                         style={{ 
+//                           padding: "12px", 
+//                           borderBottom: `1px solid ${C.border}`, 
+//                           verticalAlign: "middle",
+//                           textAlign: "center",
+//                           backgroundColor: C.accent.goldBg
+//                         }}
+//                       >
+//                         <div style={{ 
+//                           color: C.accent.gold, 
+//                           fontWeight: 600,
+//                           fontSize: 14,
+//                           display: "flex",
+//                           alignItems: "center",
+//                           justifyContent: "center",
+//                           gap: 8,
+//                           flexDirection: "column"
+//                         }}>
+//                           <span style={{ fontSize: 24 }}>🍽️</span>
+//                           <span>Lunch Break</span>
+//                           <span style={{ fontSize: 11, fontWeight: "normal" }}>{slot.fullTimeRange || `${slot.time} - ${slot.endTime}`}</span>
+//                         </div>
+//                       </td>
+//                     );
+//                   }
+                  
+//                   if (isBreakSlot(slot)) {
+//                     return (
+//                       <td 
+//                         key={`${day}-${idx}`} 
+//                         style={{ 
+//                           padding: "12px", 
+//                           borderBottom: `1px solid ${C.border}`, 
+//                           verticalAlign: "middle",
+//                           textAlign: "center",
+//                           backgroundColor: C.accent.blueBg
+//                         }}
+//                       >
+//                         <div style={{ 
+//                           color: C.accent.blue, 
+//                           fontWeight: 600,
+//                           fontSize: 14,
+//                           display: "flex",
+//                           alignItems: "center",
+//                           justifyContent: "center",
+//                           gap: 8,
+//                           flexDirection: "column"
+//                         }}>
+//                           <span style={{ fontSize: 20 }}>☕</span>
+//                           <span>Short Break</span>
+//                           <span style={{ fontSize: 11, fontWeight: "normal" }}>{slot.fullTimeRange || `${slot.time} - ${slot.endTime}`}</span>
+//                         </div>
+//                       </td>
+//                     );
+//                   }
+                  
+//                   const slots = getSlotContent(day, slot);
+                  
+//                   return (
+//                     <td key={`${day}-${idx}`} style={{ 
+//                       padding: "6px", 
+//                       borderBottom: `1px solid ${C.border}`, 
+//                       verticalAlign: "top",
+//                       backgroundColor: slots.length > 0 ? `${slots[0]?.color}10` : "transparent"
+//                     }}>
+//                       {slots.length > 0 ? (
+//                         slots.map(s => (
+//                           <div
+//                             key={s.id}
+//                             style={{
+//                               background: `${s.color}20`,
+//                               borderLeft: `3px solid ${s.color}`,
+//                               borderRadius: 4,
+//                               padding: "8px",
+//                               marginBottom: slots.length > 1 ? 4 : 0,
+//                             }}
+//                           >
+//                             <div style={{ fontWeight: 600, fontSize: 12, color: C.text.primary }}>{s.subject}</div>
+//                             <div style={{ fontSize: 10, color: C.text.secondary }}>{s.facultyName}</div>
+//                             <div style={{ fontSize: 10, color: s.type === "lab" ? C.accent.green : C.accent.blue }}>{s.room} - Sec {s.section}</div>
+//                           </div>
+//                         ))
+//                       ) : (
+//                         <div style={{ 
+//                           height: "100%", 
+//                           minHeight: 60, 
+//                           display: "flex", 
+//                           alignItems: "center", 
+//                           justifyContent: "center",
+//                           color: C.text.tertiary,
+//                           fontSize: 12
+//                         }}>
+//                           —
+//                         </div>
+//                       )}
+//                     </td>
+//                   );
+//                 })}
+//               </tr>
+//             ))}
+//           </tbody>
+//         </table>
+//       </div>
+//     </Card>
+//   );
+// }
+
 // src/components/shared/WeeklyTimetableView.jsx
 import { Card, Title } from "../common";
 import { AppState } from "../../AppState";
@@ -7,18 +562,22 @@ import { C } from "../../styles/theme";
 export function WeeklyTimetableView({ schedule, title }) {
   const config = AppState.timetableConfig;
   const timeSlots = generateTimeSlots(config);
-  // Keep ALL time slots including lunch
   const allTimeSlots = timeSlots;
   
-  const getSlotContent = (day, time) => {
-    const slots = schedule.filter(s => s.day === day && s.time === time);
+  const getSlotContent = (day, timeSlot) => {
+    const slots = schedule.filter(s => s.day === day && s.timeStart === timeSlot.time);
     return slots;
   };
   
-  // Check if a time slot is lunch break
-  const isLunchSlot = (slot) => {
-    return slot.isLunch === true;
-  };
+  const isLunchSlot = (slot) => slot.isLunch === true;
+  const isBreakSlot = (slot) => slot.isBreak === true;
+  
+  // Check if there are any breaks in the time slots
+  const hasBreaks = allTimeSlots.some(slot => slot.isBreak);
+  const hasLunch = allTimeSlots.some(slot => slot.isLunch);
+  
+  // Filter out breaks if they don't exist in schedule (but keep them if they exist in timeSlots)
+  // Actually, we need to show breaks only if they are in the timeSlots generated from config
   
   return (
     <Card>
@@ -28,42 +587,71 @@ export function WeeklyTimetableView({ schedule, title }) {
         <table style={{ width: "100%", borderCollapse: "collapse", minWidth: 800 }}>
           <thead>
             <tr>
-              <th style={{ padding: "12px", textAlign: "left", color: C.text.primary, borderBottom: `2px solid ${C.border}` }}>Day / Time</th>
-              {allTimeSlots.map(slot => (
-                <th key={slot.time} style={{ 
-                  padding: "12px", 
-                  textAlign: "center", 
-                  color: C.text.primary, 
-                  borderBottom: `2px solid ${C.border}`,
-                  backgroundColor: slot.isLunch ? C.accent.goldBg : "transparent"
-                }}>
-                  {slot.isLunch ? (
-                    <>
-                      <div style={{ fontWeight: 600, color: C.accent.gold }}>🍽️ LUNCH</div>
-                      <div style={{ fontSize: 11, color: C.text.tertiary }}>{slot.time} - {slot.endTime}</div>
-                    </>
-                  ) : (
-                    <>
-                      <div style={{ fontWeight: 600 }}>{slot.period}</div>
-                      <div style={{ fontSize: 11, color: C.text.tertiary }}>{slot.time} - {slot.endTime}</div>
-                    </>
-                  )}
-                </th>
-              ))}
+              <th style={{ padding: "12px", textAlign: "left", color: C.text.primary, borderBottom: `2px solid ${C.border}`, backgroundColor: C.surface }}>
+                Day / Time
+              </th>
+              {allTimeSlots.map((slot, idx) => {
+                let bgColor = "transparent";
+                let textColor = C.text.primary;
+                
+                if (slot.isLunch) {
+                  bgColor = C.accent.goldBg;
+                  textColor = C.accent.gold;
+                } else if (slot.isBreak) {
+                  bgColor = C.accent.blueBg;
+                  textColor = C.accent.blue;
+                }
+                
+                return (
+                  <th key={idx} style={{ 
+                    padding: "12px", 
+                    textAlign: "center", 
+                    color: textColor, 
+                    borderBottom: `2px solid ${C.border}`,
+                    backgroundColor: bgColor,
+                    minWidth: 100
+                  }}>
+                    {slot.isLunch ? (
+                      <>
+                        <div style={{ fontWeight: 600 }}>🍽️ LUNCH</div>
+                        <div style={{ fontSize: 11, color: C.text.tertiary }}>{slot.fullTimeRange || `${slot.time} - ${slot.endTime}`}</div>
+                      </>
+                    ) : slot.isBreak ? (
+                      <>
+                        <div style={{ fontWeight: 600 }}>☕ BREAK</div>
+                        <div style={{ fontSize: 11, color: C.text.tertiary }}>{slot.fullTimeRange || `${slot.time} - ${slot.endTime}`}</div>
+                      </>
+                    ) : (
+                      <>
+                        <div style={{ fontWeight: 600 }}>{slot.period}</div>
+                        <div style={{ fontSize: 11, color: C.text.tertiary }}>{slot.fullTimeRange || `${slot.time} - ${slot.endTime}`}</div>
+                      </>
+                    )}
+                  </th>
+                );
+              })}
             </tr>
           </thead>
           <tbody>
             {config.days.map(day => (
               <tr key={day}>
-                <td style={{ padding: "12px", color: C.text.primary, fontWeight: 600, borderBottom: `1px solid ${C.border}`, backgroundColor: C.cardHover }}>
+                <td style={{ 
+                  padding: "12px", 
+                  color: C.text.primary, 
+                  fontWeight: 600, 
+                  borderBottom: `1px solid ${C.border}`, 
+                  backgroundColor: C.cardHover,
+                  position: "sticky",
+                  left: 0,
+                  zIndex: 1
+                }}>
                   {day}
                 </td>
-                {allTimeSlots.map(slot => {
+                {allTimeSlots.map((slot, idx) => {
                   if (isLunchSlot(slot)) {
-                    // Render lunch break cell
                     return (
                       <td 
-                        key={`${day}-${slot.time}`} 
+                        key={`${day}-${idx}`} 
                         style={{ 
                           padding: "12px", 
                           borderBottom: `1px solid ${C.border}`, 
@@ -84,30 +672,66 @@ export function WeeklyTimetableView({ schedule, title }) {
                         }}>
                           <span style={{ fontSize: 24 }}>🍽️</span>
                           <span>Lunch Break</span>
-                          <span style={{ fontSize: 11, fontWeight: "normal" }}>{slot.time} - {slot.endTime}</span>
+                          <span style={{ fontSize: 11, fontWeight: "normal" }}>{slot.fullTimeRange || `${slot.time} - ${slot.endTime}`}</span>
                         </div>
                       </td>
                     );
                   }
                   
-                  const slots = getSlotContent(day, slot.time);
+                  if (isBreakSlot(slot)) {
+                    return (
+                      <td 
+                        key={`${day}-${idx}`} 
+                        style={{ 
+                          padding: "12px", 
+                          borderBottom: `1px solid ${C.border}`, 
+                          verticalAlign: "middle",
+                          textAlign: "center",
+                          backgroundColor: C.accent.blueBg
+                        }}
+                      >
+                        <div style={{ 
+                          color: C.accent.blue, 
+                          fontWeight: 600,
+                          fontSize: 14,
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          gap: 8,
+                          flexDirection: "column"
+                        }}>
+                          <span style={{ fontSize: 20 }}>☕</span>
+                          <span>Short Break</span>
+                          <span style={{ fontSize: 11, fontWeight: "normal" }}>{slot.fullTimeRange || `${slot.time} - ${slot.endTime}`}</span>
+                        </div>
+                      </td>
+                    );
+                  }
+                  
+                  const slots = getSlotContent(day, slot);
+                  
                   return (
-                    <td key={`${day}-${slot.time}`} style={{ padding: "6px", borderBottom: `1px solid ${C.border}`, verticalAlign: "top" }}>
+                    <td key={`${day}-${idx}`} style={{ 
+                      padding: "6px", 
+                      borderBottom: `1px solid ${C.border}`, 
+                      verticalAlign: "top",
+                      backgroundColor: slots.length > 0 ? `${slots[0]?.color}10` : "transparent"
+                    }}>
                       {slots.length > 0 ? (
                         slots.map(s => (
                           <div
                             key={s.id}
                             style={{
-                              background: `${s.color}10`,
-                              border: `1px solid ${s.color}30`,
-                              borderRadius: 8,
+                              background: `${s.color}20`,
+                              borderLeft: `3px solid ${s.color}`,
+                              borderRadius: 4,
                               padding: "8px",
                               marginBottom: slots.length > 1 ? 4 : 0,
                             }}
                           >
                             <div style={{ fontWeight: 600, fontSize: 12, color: C.text.primary }}>{s.subject}</div>
                             <div style={{ fontSize: 10, color: C.text.secondary }}>{s.facultyName}</div>
-                            <div style={{ fontSize: 10, color: s.type === "lab" ? C.accent.green : C.accent.blue }}>{s.room}</div>
+                            <div style={{ fontSize: 10, color: s.type === "lab" ? C.accent.green : C.accent.blue }}>{s.room} - Sec {s.section}</div>
                           </div>
                         ))
                       ) : (

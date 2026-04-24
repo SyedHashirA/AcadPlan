@@ -447,6 +447,7 @@ import { useState, useEffect } from "react";
 import { useAuth } from "../auth/AuthContext";
 import { Sidebar, Card, Title, Badge, Button } from "../common";
 import { SubjectManagementPanel } from "./SubjectManagementPanel";
+import { DepartmentTimetableControl } from "./DepartmentTimetableControl";
 import { DirectorFormFloat } from "./DirectorFormFloat";
 import { DirectorPreferenceSettings } from "./DirectorPreferenceSettings";
 import { DirectorSemesterDetailsForm } from "./DirectorSemesterDetailsForm";
@@ -480,6 +481,7 @@ export function DirectorDashboard() {
     { id: "subjects", icon: "📚", label: "Subject Management" },
     { id: "classTeacher", icon: "👨‍🏫", label: "Class Teachers" },
     { id: "courseLead", icon: "👨‍💼", label: "Course Leads" },
+    { id: "deptTimetableControl", icon: "🎯", label: "Dept Timetable Control" },
     { id: "addVisitingFaculty", icon: "👨‍🏫", label: "Add Visiting Faculty" },
     { id: "visitingFacultyPerms", icon: "👨‍🏫", label: "Visiting Faculty Perms" },
     { id: "visitingFacultyTimetable", icon: "📅", label: "VF Timetable" },
@@ -498,6 +500,7 @@ export function DirectorDashboard() {
     subjects: <SubjectManagementPanel onRefresh={() => setRefresh(r => r + 1)} />,
     classTeacher: <DirectorClassTeacherAssignment onRefresh={() => setRefresh(r => r + 1)} />,
     courseLead: <DirectorCourseLeadAssignment onRefresh={() => setRefresh(r => r + 1)} />,
+    deptTimetableControl: <DepartmentTimetableControl onRefresh={() => setRefresh(r => r + 1)} />,
     addVisitingFaculty: <AddVisitingFaculty onRefresh={() => setRefresh(r => r + 1)} />,
     visitingFacultyPerms: <VisitingFacultyPermissionsManager onRefresh={() => setRefresh(r => r + 1)} />,
     visitingFacultyTimetable: <VisitingFacultyTimetableManager onRefresh={() => setRefresh(r => r + 1)} />,
